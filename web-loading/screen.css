@@ -1,0 +1,72 @@
+@import "../renderer/ast-wordmark.css";
+
+@property --web-reveal-edge {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: -13%;
+}
+
+html, body {
+  margin: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.web-loading-screen {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: rgb(255 255 255 / 95%);
+}
+
+.web-loading-screen::before {
+  content: "";
+  position: absolute;
+  inset: -12% -20%;
+  background: radial-gradient(ellipse at center, #e1ebf2b3, #f3f7fa59 43%, transparent 71%);
+  pointer-events: none;
+  animation: web-loading-glow 3.6s ease-in-out infinite alternate;
+}
+
+.web-loading-mark {
+  --wordmark-height: clamp(42px, 7vw, 68px);
+  --wordmark-frame-time: .1s;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #26322f;
+}
+
+.web-loading-mark::before {
+  content: "";
+  display: block;
+  height: 100%;
+  background: linear-gradient(112deg, #26322f 30%, #61716b 48%, #26322f 66%) 100% center / 250% 100%;
+  animation: web-loading-shimmer 1.7s ease-in-out infinite;
+}
+
+.web-loading-screen.is-revealing {
+  mask-image: linear-gradient(135deg,
+    transparent calc(var(--web-reveal-edge) - 13%),
+    #000 calc(var(--web-reveal-edge) + 13%));
+  animation: web-loading-reveal 600ms cubic-bezier(.32, .06, .3, 1) both;
+}
+
+@keyframes web-loading-reveal {
+  to { --web-reveal-edge: 113%; }
+}
+
+@keyframes web-loading-shimmer {
+  to { background-position: 0% center; }
+}
+
+@keyframes web-loading-glow {
+  from { transform: translate(-26%, -9%); }
+  to { transform: translate(26%, 9%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .web-loading-screen::before, .web-loading-mark::before { animation: none; }
+  .web-loading-screen.is-revealing { animation: none; opacity: 0; }
+}

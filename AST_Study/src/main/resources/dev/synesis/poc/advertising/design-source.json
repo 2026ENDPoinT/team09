@@ -1,0 +1,42 @@
+{
+  "source": "https://www.figma.com/make/AxkzkUUtyfbrAzf3HiWNHv/Add-ad-space-to-layout",
+  "scope": "Banner and subscription prompt only. Source obtained from Figma Make App.tsx and index.css via the user-selected browser tab. No payment or wallet changes.",
+  "behavior": {
+    "intervalMs": 4000,
+    "slideMs": 650,
+    "hoverPauses": true,
+    "closeOpensPlans": true,
+    "modalFadeMs": 220,
+    "modalDismissMs": 160
+  },
+  "assets": {
+    "synesis-mark.png": {
+      "bytes": 263367,
+      "sha256": "1abfeeacee26b6ff0ed9286cf041f826af6fcb6a671a0b68130a377ea50f4853"
+    },
+    "synesis-mark.svg": {
+      "bytes": 6516,
+      "sha256": "ab899109d073635c1ecfd9f86606da8d2b99bdb9e4b6fd7ec1f759ca7af5b6ff"
+    },
+    "ad-2.jpg": {
+      "bytes": 89425,
+      "sha256": "1788514913d7aa5cfb1d780acc5c8ab9b7f6535a6fe6262f8348182822829de8"
+    },
+    "ad-3.jpg": {
+      "bytes": 206439,
+      "sha256": "4982ec2fbba759a4a875324af561cec43a9096b6a115ff3f14a0f376a88abcc4"
+    },
+    "ad-1.jpg": {
+      "bytes": 125572,
+      "sha256": "7a05d5e22e093ec35864ac006c6156b6ab252ca1cb46c9455ee5d1d26a7cae95"
+    },
+    "ad-0.jpg": {
+      "bytes": 218065,
+      "sha256": "dad2d3b10521bb6b3bcddfa4f8196f931b0b9ccbbc8a119115c3641c431b245a"
+    },
+    "ad-4.jpg": {
+      "bytes": 259886,
+      "sha256": "0b461c042723b4ebb50e133ff3f6bbbae9d333fafac9de5e380a9beb0a5dcadf"
+    }
+  }
+}

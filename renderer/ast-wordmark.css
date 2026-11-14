@@ -1,0 +1,18 @@
+.ast-wordmark-art {
+  /* The sprite stacks 11 frames, each twice as wide as it is tall. */
+  --wordmark-frames: 11;
+  height: var(--wordmark-height);
+  aspect-ratio: 2;
+  background-color: currentColor;
+  mask: url("./assets/dark-mono/ast-wordmark.png") 0 0 / 100% auto no-repeat;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ast-wordmark-art {
+    animation: ast-wordmark-cycle calc(var(--wordmark-frame-time, 1s) * var(--wordmark-frames)) steps(var(--wordmark-frames), end) infinite;
+  }
+}
+
+@keyframes ast-wordmark-cycle {
+  to { mask-position: 0 calc(-1 * var(--wordmark-height) * var(--wordmark-frames)); }
+}

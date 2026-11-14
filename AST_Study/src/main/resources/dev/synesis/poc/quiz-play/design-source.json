@@ -1,0 +1,9 @@
+{
+  "source": "https://www.figma.com/make/EQ1h0EdOZmU8ExdoZxXEn4/문풀",
+  "sourceFiles": ["src/App.tsx", "src/index.css"],
+  "scope": "Generated workbook solving screen only",
+  "palette": {"ink":"#171717", "paper":"#ffffff", "page":"#f7f7f7", "line":"#dedede"},
+  "layout": {"maxWidth":1180, "indexWidth":292, "columnGap":22, "indexBreakpoint":860, "cardRadius":18},
+  "motionMs": {"choiceAndButtonHover":150, "progress":300, "compactIndex":220},
+  "runtime": "Native Swing drawing; one live HTML/math question; shared idle-stopping motion clock; no blur or frame snapshots"
+}

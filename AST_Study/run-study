@@ -1,0 +1,27 @@
+#!/bin/sh
+set -eu
+
+study_root=$(cd "$(dirname "$0")" && pwd -P)
+study_distribution="$study_root/build/install/synesis-audio-poc"
+study_java_home=${JAVA_HOME:-}
+if [ -z "$study_java_home" ] && [ "$(uname -s)" = Darwin ]; then
+    study_java_home=$(/usr/libexec/java_home -v 21 2>/dev/null || true)
+fi
+study_java="${study_java_home:-$study_root/.tools/jdk21/Contents/Home}/bin/java"
+
+if [ ! -x "$study_java" ]; then
+    printf '%s\n' 'Java 21 실행 경로를 JAVA_HOME으로 지정해 주세요.' >&2
+    exit 1
+fi
+if [ ! -d "$study_distribution/lib" ]; then
+    printf '%s\n' '먼저 Gradle installDist로 AST 학습 창을 빌드해 주세요.' >&2
+    exit 1
+fi
+
+if [ "$(uname -s)" = Darwin ]; then
+    set -- --add-exports=java.desktop/com.apple.eawt=ALL-UNNAMED '-Xdock:name=AST Study' -cp "$study_distribution/lib/*" dev.synesis.poc.AstStudyMain "$@"
+else
+    set -- -cp "$study_distribution/lib/*" dev.synesis.poc.AstStudyMain "$@"
+fi
+cd "$study_root"
+exec "$study_java" "$@"

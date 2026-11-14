@@ -1,0 +1,197 @@
+{
+  "figmaFile": "JxQyBkrJ6p1HsRsCNTTGU1",
+  "weeklyNode": "1:3913",
+  "monthlyNode": "1:4260",
+  "navigation": "Live local-date calendar; event, tag, task and goal controls use PlannerStore.",
+  "typography": {
+    "family": "Noto Sans KR",
+    "tracking": 0,
+    "heading": {
+      "weight": 700,
+      "size": 28,
+      "lineHeight": 40
+    },
+    "dateAndCardTitle": {
+      "weight": 700,
+      "size": 18,
+      "lineHeight": 28
+    },
+    "eventTitle": {
+      "weight": 500,
+      "size": 12,
+      "lineHeight": 18
+    },
+    "eventTime": {
+      "weight": 500,
+      "size": 10,
+      "lineHeight": 16
+    }
+  },
+  "colors": {
+    "accent": "#002860",
+    "surface": "#f5f8fc",
+    "border": "#d8e1ee"
+  },
+  "assets": {
+    "previous": "1:3990",
+    "next": "1:3992",
+    "task-check": "1:4127",
+    "goal-check": "1:4153",
+    "bell": "30:3267",
+    "chevron": "I26:3135;123:1992;123:1937",
+    "field-check": "26:2837",
+    "navy": "26:3157",
+    "navy-dot": "I26:3157;26:2843",
+    "blue": "26:3161",
+    "teal": "26:3165",
+    "ochre": "26:3169",
+    "rose": "26:3173",
+    "slate": "26:3177"
+  },
+  "screens": {
+    "weekly": "1:3913",
+    "monthly": "1:4260",
+    "weeklyAdd": "26:2844",
+    "monthlyAdd": "27:2485",
+    "weeklyTags": "27:2760",
+    "monthlyTags": "27:3288"
+  },
+  "storage": "UserDataStore.Area.PLANNER/planner.json",
+  "assetAudit": [
+    {
+      "file": "bell.png",
+      "pixels": [
+        40,
+        40
+      ],
+      "bytes": 825,
+      "sha256": "764793b45d3f948f6c2d7730f07321d000ba4467163a3591d8f71a08bcb05cd7"
+    },
+    {
+      "file": "blue.png",
+      "pixels": [
+        32,
+        32
+      ],
+      "bytes": 522,
+      "sha256": "ba7026298732cfb63143c182c4ca9c1bf6a3de8f22a8b9c728f51158c9047cef"
+    },
+    {
+      "file": "chevron.png",
+      "pixels": [
+        14,
+        14
+      ],
+      "bytes": 247,
+      "sha256": "5d5aba6785123e605a4908c0943d2426b056b1957533d03c57709b765721553a"
+    },
+    {
+      "file": "field-check.png",
+      "pixels": [
+        18,
+        18
+      ],
+      "bytes": 411,
+      "sha256": "94517b817833b988db4e13e50ad6e9fb54bc914524a76734cf65a9aafe98e5f2"
+    },
+    {
+      "file": "goal-check.png",
+      "pixels": [
+        72,
+        72
+      ],
+      "bytes": 556,
+      "sha256": "eccde078bfccf01a7ffb98a0f87bd3073ac43f1e34a20e19a4567cd3d571f036"
+    },
+    {
+      "file": "navy-dot.png",
+      "pixels": [
+        22,
+        22
+      ],
+      "bytes": 429,
+      "sha256": "b67b6dcc72abf019f95ad9be728c5038c7ebffac4f043a6147d2416ce7ce22b4"
+    },
+    {
+      "file": "navy.png",
+      "pixels": [
+        32,
+        32
+      ],
+      "bytes": 1003,
+      "sha256": "c9abee90be7fa0124ccc5fde4de7ee51d43fc01824c2e17cc25c1c66a40ba4fd"
+    },
+    {
+      "file": "next.png",
+      "pixels": [
+        48,
+        48
+      ],
+      "bytes": 427,
+      "sha256": "0eb1270ea9a91409f8fa90a3fde9b30809178057e53871cc27351ed0a107151c"
+    },
+    {
+      "file": "ochre.png",
+      "pixels": [
+        32,
+        32
+      ],
+      "bytes": 520,
+      "sha256": "d394a382402c68b614c507b83664b50d41b6ccc91f9075580ff879d9897941f9"
+    },
+    {
+      "file": "previous.png",
+      "pixels": [
+        48,
+        48
+      ],
+      "bytes": 447,
+      "sha256": "8e8212d6d58e07f552ae29d9e2d05378311b22901df951203ee40b20240006b4"
+    },
+    {
+      "file": "rose.png",
+      "pixels": [
+        32,
+        32
+      ],
+      "bytes": 531,
+      "sha256": "0f06ac18d98877787354b4f04411469a1c877a325fe7f6d2f7f526d3736ff85c"
+    },
+    {
+      "file": "slate.png",
+      "pixels": [
+        32,
+        32
+      ],
+      "bytes": 540,
+      "sha256": "e3b7a88bb3af63bf23abb79812795ded7c35806f61a62741b271f46034f7cbc7"
+    },
+    {
+      "file": "task-check.png",
+      "pixels": [
+        36,
+        36
+      ],
+      "bytes": 272,
+      "sha256": "b8e54265d227de3a34b27736376222b8054fa7fd8ccce798149d745e9fb88e6d"
+    },
+    {
+      "file": "teal.png",
+      "pixels": [
+        32,
+        32
+      ],
+      "bytes": 528,
+      "sha256": "ea959a56c796db285849838b9f081c656c686170b92e96f4aba9a6a68da29255"
+    }
+  ],
+  "notifications": "Not implemented. Notification controls are disabled; legacy stored values are retained only.",
+  "responsiveLayout": {
+    "week": "All seven days fit the width. Hourly rows show 09:00–18:00 by default; scroll the timeline through 00:00–24:00 beneath a fixed date/all-day header.",
+    "supportingCards": "Adaptive sidebar; placed below calendar in narrow windows.",
+    "goal": "Pinned to viewport bottom.",
+    "adjacentMonth": "Neutral grey dates and background.",
+    "focus": "No added click or keyboard-focus outlines.",
+    "eventEditor": "Preview stacks below the form when narrow; fields follow viewport width."
+  }
+}

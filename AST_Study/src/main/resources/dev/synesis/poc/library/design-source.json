@@ -1,0 +1,376 @@
+{
+  "source": {
+    "fileKey": "aJWeGbJa1QIindxzwTVzKy",
+    "nodeId": "3:41",
+    "name": "SYNESIS / 내 학습 자료 / Desktop 16:9",
+    "url": "https://www.figma.com/design/aJWeGbJa1QIindxzwTVzKy/design_1?node-id=3-41",
+    "frame": [
+      1600,
+      900
+    ]
+  },
+  "geometry": {
+    "headerHeight": 80,
+    "sidebarWidth": 224,
+    "mainInsets": [
+      40,
+      44
+    ],
+    "card": [
+      242,
+      266
+    ],
+    "cardGap": 16,
+    "cardRadius": 12,
+    "cardBorder": {
+      "width": 1,
+      "color": "#e0e0e0"
+    },
+    "cardShadow": null,
+    "thumbnailHeight": 136,
+    "thumbnailRadius": 6,
+    "cardPadding": 14,
+    "folderIconSize": 56,
+    "pdfCoverSlot": [
+      190,
+      112
+    ]
+  },
+  "headerAsset": {
+    "file": "header-glass.png",
+    "pixels": [
+      1600,
+      112
+    ],
+    "logicalSize": [
+      1600,
+      112
+    ],
+    "sourceNode": "5:4",
+    "contains": "Decorative artwork, glass with its native multitone noise, logo fade and lower edge only. Text and controls remain native Swing.",
+    "baseFill": "#ffffff",
+    "glassFillOpacity": 0.62,
+    "glass": {
+      "radius": 18,
+      "refraction": 0.04,
+      "depth": 2,
+      "lightAngle": -45,
+      "lightIntensity": 0.28,
+      "dispersion": 0
+    },
+    "noise": {
+      "type": "MULTITONE",
+      "size": 1,
+      "color": "#000000",
+      "colorAlpha": 0.25,
+      "opacity": 0.4,
+      "density": 0.57
+    },
+    "innerShadow": {
+      "color": "#ffffff",
+      "alpha": 0.9,
+      "x": 0,
+      "y": 1,
+      "blur": 1
+    },
+    "dropShadow": {
+      "color": "#000000",
+      "alpha": 0.035,
+      "x": 0,
+      "y": 2,
+      "blur": 10
+    },
+    "lowerEdge": {
+      "color": "#000000",
+      "alpha": 0.04,
+      "height": 1
+    },
+    "rendering": {
+      "logicalSize": [
+        1600,
+        112
+      ],
+      "viewportHeight": 80,
+      "bottomBorder": {
+        "width": 0.8,
+        "color": "#000000"
+      },
+      "horizontalAnchor": "right",
+      "offsetX": "windowWidth - 1600",
+      "offsetY": -16,
+      "resizeBehavior": "Translate and clip only; artwork dimensions remain fixed."
+    },
+    "artworkSourceNode": "70:201",
+    "compositionSize": [
+      1800,
+      1012.5
+    ],
+    "compositionDescription": "Denser Mondrian composition: red block, split white/blue central column, yellow upper block and black divisions.",
+    "exportScale": 1,
+    "separateCentralGrainLayer": false
+  },
+  "fonts": {
+    "family": "Noto Sans KR",
+    "weights": [
+      400,
+      500,
+      700
+    ],
+    "source": "https://github.com/notofonts/noto-cjk/tree/Sans2.004/Sans/SubsetOTF/KR",
+    "license": "OFL.txt",
+    "scope": "LibraryDesign only; no global font registration."
+  },
+  "designOnly": [
+    "D-day example",
+    "Account identity example",
+    "Save status example",
+    "Help",
+    "List view switch"
+  ],
+  "existingActions": [
+    "search",
+    "sort",
+    "bulk selection",
+    "PDF import",
+    "folder creation",
+    "folder open",
+    "document open",
+    "context menus",
+    "folder drag/drop",
+    "profile",
+    "logout"
+  ],
+  "excluded": [
+    "concept tab",
+    "PDF generation",
+    "tutor pipeline",
+    "shared StudyTheme",
+    "login screen",
+    "trial app",
+    "full application build"
+  ],
+  "assetFiles": [
+    "NotoSansKR-Bold.otf",
+    "NotoSansKR-Medium.otf",
+    "NotoSansKR-Regular.otf",
+    "OFL.txt",
+    "add.png",
+    "arrow.png",
+    "breadcrumb-folder.png",
+    "chart.png",
+    "check.png",
+    "chevron.png",
+    "clock.png",
+    "dots.png",
+    "folder.png",
+    "globe.png",
+    "grid.png",
+    "header-glass.png",
+    "help.png",
+    "list.png",
+    "nav-folder.png",
+    "plus.png",
+    "search.png",
+    "stack.png",
+    "user.png"
+  ],
+  "assetAudit": [
+    {
+      "file": "add.png",
+      "pixels": [
+        54,
+        54
+      ],
+      "bytes": 350,
+      "sha256": "7f3b403d68da8f6db184dcd85041b505bac575903d62b1bf164acacdfae7a544"
+    },
+    {
+      "file": "arrow.png",
+      "pixels": [
+        48,
+        48
+      ],
+      "bytes": 483,
+      "sha256": "a74a7e5e8071f8014f658c2030e6773c611db70947aa996dacddf68d1afaab72"
+    },
+    {
+      "file": "breadcrumb-folder.png",
+      "pixels": [
+        48,
+        48
+      ],
+      "bytes": 638,
+      "sha256": "be5954c4b002f4f3ff2c1ef69e804573d2b7491926f502e17aadb898aa42fe4b"
+    },
+    {
+      "file": "chart.png",
+      "pixels": [
+        204,
+        204
+      ],
+      "bytes": 1515,
+      "sha256": "531dd24f59a2e62e073d4b861d3ae2af7abca6401dce9a336ff1ed601b2d4766"
+    },
+    {
+      "file": "check.png",
+      "pixels": [
+        48,
+        48
+      ],
+      "bytes": 327,
+      "sha256": "03765c279ee536926b42f748485f0c26df25091c59f7f998aac6ed517862b223"
+    },
+    {
+      "file": "chevron.png",
+      "pixels": [
+        36,
+        36
+      ],
+      "bytes": 382,
+      "sha256": "c20af8678cb0bd5cc7a17d19ac545e4c73c3392b22c7bb72c7e9ee35bf2926f8"
+    },
+    {
+      "file": "clock.png",
+      "pixels": [
+        60,
+        60
+      ],
+      "bytes": 1478,
+      "sha256": "82ec5413aa748edd859c11821477350052f34568d7d66ceb9a057f0da0813979"
+    },
+    {
+      "file": "dots.png",
+      "pixels": [
+        54,
+        54
+      ],
+      "bytes": 573,
+      "sha256": "a3388f3b7f17530823c372de29decea96894155810f422ba18d5938f659b4582"
+    },
+    {
+      "file": "folder.png",
+      "pixels": [
+        153,
+        136
+      ],
+      "bytes": 1161,
+      "sha256": "2f50fa1849b6d5d67e43d896477bf9b2c565d19cd6bb27cb2791a730fd22915d"
+    },
+    {
+      "file": "globe.png",
+      "pixels": [
+        204,
+        204
+      ],
+      "bytes": 5754,
+      "sha256": "f01014e44faa3c7746e7d95b7a60ec541ba290089bfd7e2bdc1ccf33c79475fd"
+    },
+    {
+      "file": "grid.png",
+      "pixels": [
+        48,
+        48
+      ],
+      "bytes": 430,
+      "sha256": "571223ace8bb5be830586d140a3bc0525474b8fd7fce3c5eeaac6faf08d23bc9"
+    },
+    {
+      "file": "header-glass.png",
+      "pixels": [
+        1600,
+        112
+      ],
+      "bytes": 345757,
+      "sha256": "6bb97e0bc4903ce0f56f5238c8e705817ee013687c1963c676b80d9a038bc71a"
+    },
+    {
+      "file": "help.png",
+      "pixels": [
+        60,
+        60
+      ],
+      "bytes": 1686,
+      "sha256": "4926205874457f885de051499d3d236ba6e4a444060ce1fb14ac1e3fd62d1f3d"
+    },
+    {
+      "file": "list.png",
+      "pixels": [
+        48,
+        48
+      ],
+      "bytes": 321,
+      "sha256": "38c51dab2c36d53c9dbeceba0669a043ae60f5a9dae5beca55f067b38673ecc1"
+    },
+    {
+      "file": "nav-folder.png",
+      "pixels": [
+        60,
+        60
+      ],
+      "bytes": 551,
+      "sha256": "981f9466de69271525cf8e8eb14879a619c51fb6ebedff9f4fedf172c023c8a5"
+    },
+    {
+      "file": "plus.png",
+      "pixels": [
+        204,
+        204
+      ],
+      "bytes": 1156,
+      "sha256": "e2dc3feec3710774a9f840803555c49bfedcbaa3a8d6ec8d433a97cfa7ae4220"
+    },
+    {
+      "file": "search.png",
+      "pixels": [
+        60,
+        60
+      ],
+      "bytes": 1365,
+      "sha256": "d69bf3313ecc3c67148dc584c251e2d63f1ecd32fad02d52cf647e62a266d054"
+    },
+    {
+      "file": "stack.png",
+      "pixels": [
+        204,
+        204
+      ],
+      "bytes": 2887,
+      "sha256": "e6d8670926cec3490d546ea218a02d11033b9fae41f52de3ef9d2bf093e62097"
+    },
+    {
+      "file": "user.png",
+      "pixels": [
+        60,
+        60
+      ],
+      "bytes": 1191,
+      "sha256": "e46339fa96597aa833a2fbd494557ba55cd8f3b7266a4f2dea3007ef5b7c03b9"
+    }
+  ],
+  "implementationNotes": [
+    "Retain the user-requested 80px header, compact cards and right-aligned fixed-size artwork while applying the updated 16:9 Figma composition."
+  ],
+  "activeHeaderAsset": {
+    "file": "header-glass-super.png",
+    "figmaFile": "JxQyBkrJ6p1HsRsCNTTGU1",
+    "sourceHeader": "1:3914",
+    "sourceNodes": [
+      "1:3915",
+      "1:3931",
+      "1:3932"
+    ],
+    "logicalSize": [
+      1600,
+      56
+    ],
+    "pixels": [
+      1600,
+      56
+    ],
+    "glassFillOpacity": 0.29,
+    "glassLayerOpacity": 0.83,
+    "contains": "Decoration only: Mondrian artwork, original Figma glass/noise, logo fade. Temporary export frame removed. Text and controls remain Swing.",
+    "placement": "Native logical size, right aligned; bottom 0.8px black border preserved in Swing.",
+    "sha256": "c4445127e115e3f51457a7276c9bcbb8ee5cfde0f5e5c745330bf1c1433d2701"
+  }
+}

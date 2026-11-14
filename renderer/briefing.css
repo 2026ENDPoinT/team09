@@ -1,0 +1,130 @@
+.briefing-refresh {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.briefing-sections,
+.briefing-course-panels {
+  display: grid;
+  gap: 16px;
+}
+
+.briefing-assignment-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.briefing-panel {
+  min-width: 0;
+  border: 1px solid #e0e7f2;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.briefing-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  padding: 13px 16px;
+  border-bottom: 1px solid #e9edf5;
+}
+
+.briefing-panel-heading h2 { font-size: 17px; }
+.briefing-panel-heading > span { color: #56647b; font-size: 12px; }
+
+.briefing-note {
+  padding: 13px 16px;
+  color: #56647b;
+  font-size: 13px;
+}
+
+.briefing-note--attention { color: #735312; }
+
+.briefing-note--action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.briefing-course-panels > .briefing-note {
+  border: 1px solid #efdbac;
+  border-radius: 8px;
+  background: #fff4df;
+}
+
+.briefing-list { list-style: none; margin: 0; padding: 0; }
+.briefing-list > li + li { border-top: 1px solid #e9edf5; }
+
+.briefing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+}
+
+.briefing-item-title {
+  display: block;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+.briefing-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px 9px;
+  margin-top: 3px;
+  color: #56647b;
+  font-size: 12px;
+}
+
+.briefing-due { flex: 0 0 auto; font-variant-numeric: tabular-nums; }
+.briefing-due--overdue { color: #873329; background: #fcece8; }
+
+.briefing-course-notice summary { padding: 12px 16px; cursor: pointer; }
+.briefing-course-notice summary .briefing-item-title { display: inline; margin-left: 5px; }
+.briefing-course-notice summary .briefing-item-meta { margin-left: 17px; }
+.briefing-course-notice summary:hover { background: #f6f8ff; }
+.briefing-course-notice summary:focus-visible { outline: 3px solid #3e74e7; outline-offset: -3px; }
+.briefing-course-notice-content { padding: 0 16px 14px 33px; font-size: 13px; overflow-wrap: anywhere; }
+
+.briefing-campus-filters { margin: 0; padding: 12px 16px; border-bottom: 1px solid #e9edf5; }
+.briefing-campus-filters .button { min-height: 32px; padding: 5px 10px; }
+.briefing-campus-group + .briefing-campus-group { border-top: 1px solid #e0e7f2; }
+.briefing-campus-group-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 16px;
+  background: #f5f7fb;
+}
+.briefing-campus-group-heading h3 { color: #324b71; font-size: 13px; }
+.briefing-campus-group-heading > span { color: #56647b; font-size: 12px; }
+.briefing-campus-row { border-radius: 0; }
+.briefing-panel > .briefing-list li:last-child .briefing-campus-row,
+.briefing-campus-group:last-child li:last-child .briefing-campus-row { border-radius: 0 0 12px 12px; }
+.briefing-pinned { padding: 1px 6px; margin-right: 6px; }
+.briefing-campus-preview {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  margin-top: 5px;
+  color: #465874;
+  font-size: 13px;
+}
+
+@media (max-width: 760px) {
+  .briefing-assignment-grid { grid-template-columns: 1fr; }
+}
+.briefing-assignment-link { border: 0; padding: 0; background: none; color: #254b9c; text-align: left; cursor: pointer; }
+.briefing-assignment-link:hover { text-decoration: underline; }

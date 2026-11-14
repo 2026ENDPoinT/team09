@@ -1,0 +1,40 @@
+{
+  "figmaFile": "JxQyBkrJ6p1HsRsCNTTGU1",
+  "screen": "41:3271",
+  "folderComponent": "42:3312",
+  "paperComponent": "42:3439",
+  "folderLogicalSize": [
+    198,
+    158
+  ],
+  "paperLogicalSize": [
+    133,
+    174
+  ],
+  "ellipsisLogicalSize": [
+    18,
+    18
+  ],
+  "paperCornerLogicalSize": [
+    17,
+    17
+  ],
+  "rasterScale": 3,
+  "runtime": "local PNG exports; folder pigment and glyph derive from stored user preferences",
+  "assets": {
+    "ellipsis.png": "a6d996caaf7ca06d53c5f16ca7060766b663920096c2ff863183e5f784c2651d",
+    "ellipsis.svg": "5df1a8bd331abc1b000459565361921ac2b530b647ed3c21107e36d4719fd398",
+    "folder-amber.png": "e6c8b0e194de437c497bc061aa49881f60579adfc7b8d21a40f15e26161e4eb1",
+    "folder-amber.svg": "208e143fa3cf34d0c6fc8f1c7086c15b00328c4a91b3e0b426a7c99b9f59fc58",
+    "folder-blue.png": "8268c7d31403e7113c87773a6515b6bc9f484a6d51ce240fc4e6f88a3837d411",
+    "folder-blue.svg": "49e1c29beba46bfa851da6a6aa36a7bc1b098d697396cc4668b7a5b91d6a5752",
+    "folder-forest.png": "d221d67aefd0799b4cd3e29c1f2426341a4c29b1452a1ff98734da8423554f66",
+    "folder-forest.svg": "3021e88310661eecc630cbc8132582330d0bcba2c7fbeb6e6c3aff0fa6a7ce87",
+    "folder-graphite.png": "4d00d54b1c1da4b9f03c4339afe32200c856da77db5d98884a793dc770e933f0",
+    "folder-graphite.svg": "27e329e54e31e3b59d04810bc1b9ea27a4dfc399b6d35557edf78c1d42680f12",
+    "folder-plum.png": "0bd3e8d33f9e32a9e2f4d98985c63b4f32481a1842312dfd51b893a790b7dcf7",
+    "folder-plum.svg": "2f2e16a7d6f1a894eeeaa6f9fa5e9f34dd553f1e8d5d1b400fa11d1522f6024d",
+    "paper-corner.png": "aea784b0218ea745c545bc62be1de5348b6375592808a733fbd5a0091426477d",
+    "paper-corner.svg": "8b683f8bf4cf70e9728719c2ad35b3cd91212699750b58d67e33b928a920ba8e"
+  }
+}

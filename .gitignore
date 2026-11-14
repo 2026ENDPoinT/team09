@@ -1,0 +1,17 @@
+node_modules/
+dist/
+dist-desktop/
+.venv/
+.npm-cache/
+.electron-cache/
+.pip-cache/
+__pycache__/
+*.egg-info/
+.env*
+!.env.example
+data/
+auth_state.json
+login_process.pid
+.DS_Store
+
+.playwright-browsers/

@@ -1,0 +1,20 @@
+.lecture-record-view, .record-loading {
+  min-height: 100%; color-scheme: dark; background: #201923; color: #f9eff6;
+}
+.record-loading { padding: 30px; }
+.lecture-record-view { display: grid; height: 100%; grid-template-rows: auto minmax(0, 1fr); }
+.record-heading { padding: 24px 30px 20px; border-bottom: 1px solid #523d4c; background: #29202b; }
+.record-heading p, .record-meta { color: #d0b8cb; font-size: 13px; }
+.record-heading h1 { font-size: clamp(21px, 3vw, 31px); line-height: 1.35; margin-top: 7px; overflow-wrap: anywhere; }
+.record-columns { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 0; }
+.record-columns section { display: grid; grid-template-rows: auto minmax(0, 1fr); min-width: 0; }
+.record-columns section + section { border-left: 1px solid #523d4c; }
+.record-columns h2 { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 14px 22px; border-bottom: 1px solid #523d4c; font-size: 16px; }
+.record-columns h2 span { font-weight: 500; color: #d0b8cb; font-size: 12px; white-space: nowrap; }
+.record-scroll { overflow: auto; scrollbar-gutter: stable; padding: 0 23px 18px; outline-offset: -3px; }
+.record-empty { padding-top: 20px; color: #d0b8cb; }
+.record-segment, .record-turn { padding: 14px 0; border-bottom: 1px solid #443441; line-height: 1.65; white-space: pre-wrap; overflow-wrap: anywhere; }
+.record-meta { display: flex; gap: 8px; margin-bottom: 4px; }
+.record-segment mark { border-radius: 3px; background: #4c3445; color: #ffd9e8; text-decoration: underline; text-underline-offset: 3px; }
+.record-turn h3 { width: fit-content; margin: 0 0 9px auto; padding: 7px 10px; background: #493343; border-radius: 10px 10px 3px 10px; font-size: 14px; }
+.record-turn blockquote { margin: 10px 0 0; padding: 7px 9px; border-left: 2px solid #ac7d93; color: #d0b8cb; background: #2e2430; font-size: 13px; }

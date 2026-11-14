@@ -1,0 +1,79 @@
+{
+  "fileKey": "DXLkqXmL8yjdLKwg1jXQtb",
+  "nodeId": "2:425",
+  "frame": "MAIN-플래너_주간v",
+  "mainNode": "2:492",
+  "referenceSize": {
+    "width": 1600,
+    "height": 900,
+    "mainWidth": 1430,
+    "mainHeight": 844
+  },
+  "layout": {
+    "padding": 28,
+    "headerHeight": 64,
+    "headerGap": 20,
+    "calendarWidth": 1066,
+    "calendarHeight": 496,
+    "weekdayHeaderHeight": 48,
+    "timeGutter": 44,
+    "dailyWorkspaceGap": 16,
+    "dailyHeight": 192,
+    "dailyWidth": 468,
+    "quickNoteWidth": 582,
+    "sidebarWidth": 288,
+    "sidebarGap": 20,
+    "sidebarCardGap": 16,
+    "miniCalendarHeight": 232,
+    "weeklyTodoHeight": 264,
+    "weeklyGoalsHeight": 176,
+    "cardRadius": 12,
+    "hourHeight": 28
+  },
+  "colors": {
+    "accent": "#002860",
+    "border": "#D8E1EE",
+    "hourRules": "#D8E1EE",
+    "today": "#F5F8FC",
+    "paper": "#FFFFFF",
+    "ink": "#141414",
+    "muted": "#757575",
+    "quickNoteList": "#F6F8FC",
+    "quickNoteSelected": "#E5EDF9",
+    "weekendHeading": "#D00E0E",
+    "dayDividers": "#DAE9FF"
+  },
+  "reusedAssets": [
+    {
+      "path": "bell.png",
+      "logicalSize": 40,
+      "note": "Includes the button outline; do not add a second border."
+    },
+    {
+      "path": "task-check.png",
+      "logicalSize": 10
+    },
+    {
+      "path": "../recording/edit.png",
+      "logicalSize": 14,
+      "note": "Existing application edit icon for user-requested hover actions."
+    }
+  ],
+  "implementation": {
+    "hourPerCell": 1,
+    "initialHour": 7,
+    "wholeDayScrollable": true,
+    "preserveScrollEdgeFade": true,
+    "todoTagNamespace": "todoTags",
+    "quickNote": "design-only fixture",
+    "monthly": "Retains previous layout, calendar renderer, data and event editor.",
+    "visibleHours": "Viewport height / 28px; 16 hours at the 496px Figma reference height",
+    "headerAgenda": false,
+    "taskHoverBadges": false,
+    "hiddenEventCallouts": true,
+    "allDayAccess": "Date click opens the existing day event list; no all-day compact header row.",
+    "eventCard": "Shared PlannerEventCard renderer: white surface, original selected color stripe, title/time/tags; same as editor preview.",
+    "eventImportantFillOverride": false
+  },
+  "calendarNode": "4:299"
+}

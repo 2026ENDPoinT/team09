@@ -1,0 +1,114 @@
+.sketch-home {
+  max-inline-size: 1120px;
+  margin-inline: auto;
+  padding-block: 12px 36px;
+}
+
+.sketch-home .sketch-breadcrumb {
+  display: inline-block;
+  margin: 0 16px 24px 0;
+  font-size: 12px;
+}
+
+.sketch-home .sketch-columns { min-height: 0; gap: 32px 24px; }
+.sketch-home :is(.sketch-primary, .sketch-secondary) { row-gap: 32px; }
+
+.sketch-home .sketch-greeting {
+  min-height: 0;
+  padding: 6px 0 8px;
+  gap: 9px;
+}
+
+.sketch-home .sketch-greeting h1 { font-size: clamp(25px, 3.6cqi, 34px); line-height: 1.25; }
+.sketch-home .sketch-greeting p { font-size: 15px; line-height: 1.55; }
+.sketch-home .sketch-heading { min-height: 30px; }
+.sketch-home .sketch-heading h2 { font-size: 18px; line-height: 1.35; }
+
+.sketch-home :is(.sketch-deadlines, .sketch-overdue) { min-height: 0; gap: 16px; }
+.sketch-home .sketch-deadline-grid,
+.sketch-home .sketch-deadline-grid:has(> :nth-child(2):last-child) {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 156px), 1fr));
+  gap: 16px 12px;
+}
+
+.sketch-home .sketch-deadline-grid:has(> :only-child) { grid-template-columns: minmax(0, 360px); }
+.sketch-home .sketch-deadline {
+  grid-column: auto;
+  min-height: 0;
+  padding: 13px 14px;
+  gap: 4px;
+  font-size: 12px;
+  line-height: 17px;
+}
+
+.sketch-home .sketch-deadline[data-primary] {
+  border-color: #9bb7cb;
+  background: #edf5fc;
+  color: var(--sketch-muted);
+}
+
+.sketch-home .sketch-deadline[data-primary]:hover { background: #e2effa; }
+.sketch-home .sketch-deadline strong {
+  color: var(--sketch-ink);
+  font-size: 15px;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.sketch-home .sketch-deadline-countdown,
+.sketch-home .sketch-deadline[data-primary] .sketch-deadline-countdown {
+  margin-bottom: 4px;
+  padding: 4px 8px;
+  border-radius: 7px;
+  background: #fbecef;
+  color: #a12832;
+  font-size: 17px;
+  line-height: 1.1;
+}
+
+.sketch-home .sketch-deadline-countdown[data-past-today] { font-size: 13px; }
+.sketch-home .sketch-deadline b { margin-top: auto; padding-top: 3px; color: var(--sketch-link); }
+.sketch-home .sketch-deadline-empty { min-height: 92px; }
+
+.sketch-home .sketch-notices { min-height: 0; padding: 13px 16px; }
+.sketch-home .sketch-notices li + li { margin-top: 0; padding-top: 0; }
+.sketch-home .sketch-notices button:not(.sketch-link) { min-height: 46px; padding-block: 5px; }
+.sketch-home details.sketch-notices { padding-block: 0; }
+.sketch-home details.sketch-notices[open] { padding-bottom: 10px; }
+.sketch-home details.sketch-notices > summary { padding-block: 12px; cursor: pointer; font-size: 14px; }
+.sketch-home details.sketch-notices > ul { margin-top: 0; }
+
+.sketch-home .sketch-calendar { min-height: 0; padding: 14px 16px; gap: 7px; }
+.sketch-home .sketch-calendar-actions { gap: 4px; }
+.sketch-home .sketch-calendar-actions button { min-width: 28px; min-height: 28px; }
+.sketch-home .sketch-weekdays { min-height: 20px; }
+.sketch-home .sketch-calendar-days { min-height: 0; gap: 3px; }
+.sketch-home .sketch-calendar-days button { height: 32px; font-size: 13px; }
+.sketch-home .sketch-calendar-summary { min-height: 0; padding-top: 9px; margin-top: 3px; }
+
+.sketch-home .sketch-meals { min-height: 0; padding: 20px 16px 22px; }
+.sketch-home .sketch-meal-result { gap: 4px; }
+.sketch-home .sketch-next { min-height: 48px; }
+.sketch-home .sketch-courses { min-height: 0; margin-top: 32px; padding: 13px 16px; }
+.sketch-home .sketch-courses li button { min-height: 52px; }
+
+@container (width > 900px) {
+  .sketch-home .sketch-columns { grid-template-columns: minmax(0, 1fr) minmax(280px, 326px); }
+}
+
+@container (width <= 420px) {
+  .sketch-home .sketch-columns,
+  .sketch-home :is(.sketch-primary, .sketch-secondary) { row-gap: 26px; }
+  .sketch-home .sketch-deadline-grid,
+  .sketch-home .sketch-deadline-grid:has(> :is(:only-child, :nth-child(2):last-child)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sketch-home .sketch-deadline {
+    display: grid;
+    grid-template-columns: minmax(62px, max-content) minmax(0, 1fr);
+    gap: 3px 12px;
+  }
+  .sketch-home .sketch-deadline-countdown { grid-area: 1 / 1 / span 3; align-self: start; justify-self: start; }
+  .sketch-home .sketch-deadline-countdown[data-past-today] { max-width: 68px; }
+  .sketch-home .sketch-deadline > :is(strong, strong + span, time, b) { grid-column: 2; }
+}

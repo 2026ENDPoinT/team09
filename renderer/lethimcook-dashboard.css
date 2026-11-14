@@ -1,0 +1,258 @@
+.ast-let-him-cook > .ast-main[data-home] > main { padding: 26px 32px 28px; }
+
+.sketch-home {
+  --sketch-ink: #182c3b;
+  --sketch-muted: #4d6475;
+  --sketch-link: #254b6b;
+  --sketch-line: #dde7ef;
+  --sketch-navy: #20384c;
+  color: var(--sketch-ink);
+  min-width: 0;
+  container-type: inline-size;
+}
+
+.sketch-breadcrumb { margin-bottom: 16px; color: var(--sketch-muted); font-size: 13px; font-weight: 500; line-height: 18px; }
+.sketch-breadcrumb span { margin-inline: 4px; }
+.sketch-status { margin-bottom: 12px; color: var(--sketch-muted); font-size: 13px; }
+.sketch-status button { margin-left: 8px; }
+.sketch-columns { display: grid; grid-template-columns: minmax(0, 756fr) minmax(0, 408fr); min-height: 720px; gap: 20px; }
+.sketch-primary, .sketch-secondary { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.sketch-greeting { display: flex; flex-direction: column; align-items: flex-start; gap: 7px; min-height: 145px; padding: 6px 2px 0; }
+.sketch-greeting time { color: var(--sketch-link); font-size: 14px; font-weight: 700; line-height: 19px; }
+.sketch-greeting h1 { margin: 0; font-size: 46px; line-height: 1.37; letter-spacing: normal; overflow-wrap: anywhere; }
+.sketch-greeting p { color: var(--sketch-muted); font-size: 18px; line-height: 25px; overflow-wrap: anywhere; }
+.sketch-greeting-assignment {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--sketch-link);
+  text-align: start;
+  cursor: pointer;
+}
+.sketch-greeting-assignment:hover { color: var(--sketch-ink); }
+
+.sketch-panel { min-width: 0; border: 1px solid var(--sketch-line); border-radius: 16px; background: #fff; }
+.sketch-heading { display: flex; align-items: center; justify-content: space-between; gap: 8px; min-height: 34px; }
+.sketch-heading h2 { min-width: 0; font-size: 21px; font-weight: 700; line-height: 29px; }
+.sketch-link, .sketch-calendar-actions button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--sketch-link);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.sketch-link:hover, .sketch-calendar-actions button:hover { text-decoration: underline; }
+.sketch-home :is(button, a):focus-visible { outline: 2px solid var(--sketch-link); outline-offset: 3px; }
+
+.sketch-deadlines { display: grid; align-content: start; min-height: 218px; gap: 10px; }
+.sketch-overdue { display: grid; gap: 10px; }
+.sketch-deadline-grid { display: grid; grid-template-columns: minmax(0, 348fr) repeat(2, minmax(0, 192fr)); gap: 12px; }
+.sketch-deadline-grid:has(> :only-child) { grid-template-columns: minmax(0, 1fr); }
+.sketch-deadline-grid:has(> :nth-child(2):last-child) { grid-template-columns: minmax(0, 348fr) minmax(0, 192fr); }
+.sketch-deadline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  min-width: 0;
+  min-height: 168px;
+  padding: 15px;
+  border: 1px solid var(--sketch-line);
+  border-radius: 16px;
+  background: #fff;
+  color: var(--sketch-muted);
+  text-align: left;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 18px;
+  overflow-wrap: anywhere;
+}
+.sketch-deadline:hover { border-color: #a6bfd2; }
+.sketch-deadline[data-primary] { border-color: var(--sketch-navy); background: var(--sketch-navy); color: #cbdce9; }
+.sketch-deadline[data-primary]:hover { background: #29475f; }
+.sketch-deadline strong { color: var(--sketch-ink); font-size: 16px; line-height: 22px; }
+.sketch-deadline[data-primary] strong { color: #fff; font-size: 22px; line-height: 30px; }
+.sketch-deadline time, .sketch-deadline b { font-size: 12px; line-height: 17px; }
+.sketch-deadline b { color: #fff; }
+.sketch-deadline-countdown {
+  margin-bottom: 4px;
+  color: #b4232d;
+  font-size: clamp(27px, 4cqi, 36px);
+  font-weight: 850;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.06;
+  white-space: nowrap;
+}
+.sketch-deadline[data-primary] .sketch-deadline-countdown {
+  color: #ff999b;
+  font-size: clamp(38px, 5cqi, 50px);
+}
+.sketch-deadline-countdown[data-past-today] { font-size: 19px; white-space: normal; }
+.sketch-deadline-empty { display: grid; place-items: center; min-height: 168px; padding: 16px; text-align: center; color: var(--sketch-muted); font-size: 13px; }
+
+.sketch-notices { min-height: 236px; padding: 13px 19px; }
+.sketch-notices ul, .sketch-courses ul { padding: 0; margin: 5px 0 0; list-style: none; }
+.sketch-notices li + li { margin-top: 5px; padding-top: 4px; border-top: 1px solid var(--sketch-line); }
+.sketch-notices button:not(.sketch-link) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 50px;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.sketch-notices button:hover strong { text-decoration: underline; }
+.sketch-notices strong, .sketch-courses strong { display: block; font-size: 14px; line-height: 19px; overflow-wrap: anywhere; }
+.sketch-notices small, .sketch-notices time, .sketch-courses small { display: block; color: var(--sketch-muted); font-size: 12px; line-height: 17px; }
+.sketch-notices time { flex: none; font-weight: 500; }
+.sketch-notices > p, .sketch-courses > p { padding-top: 12px; color: var(--sketch-muted); font-size: 13px; }
+
+.sketch-calendar { display: grid; align-content: start; gap: 9px; min-height: 376px; padding: 17px 20px 16px; }
+.sketch-calendar-actions { display: flex; align-items: center; gap: 12px; }
+.sketch-calendar-actions button { min-width: 16px; min-height: 26px; }
+.sketch-weekdays, .sketch-calendar-days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; }
+.sketch-weekdays { align-items: center; min-height: 24px; color: var(--sketch-muted); font-size: 12px; font-weight: 700; }
+.sketch-weekdays span:first-child { color: #9b363f; }
+.sketch-calendar-days { min-height: 220px; gap: 3px 1px; align-content: start; }
+.sketch-calendar-days button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--sketch-ink);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.sketch-calendar-days button[data-scheduled], .sketch-calendar-days button:hover { background: #e8f2fb; }
+.sketch-calendar-days button[data-sunday] { color: #9b363f; }
+.sketch-calendar-days button[aria-pressed="true"] { background: var(--sketch-navy); color: #fff; }
+.sketch-calendar-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--sketch-link); }
+.sketch-calendar-dot[data-due] { background: #9b363f; }
+.sketch-calendar-days button[aria-pressed="true"] .sketch-calendar-dot { background: #fff; }
+.sketch-calendar-summary { min-height: 33px; padding-top: 8px; border-top: 1px solid var(--sketch-line); color: var(--sketch-muted); font-size: 12px; font-weight: 500; line-height: 17px; }
+
+.sketch-meals { display: grid; align-content: start; gap: 10px; min-height: 228px; padding: 21px; }
+.sketch-meals .sketch-link { color: var(--sketch-muted); }
+.sketch-meals .sketch-heading h2 { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.sketch-meal-dorm {
+  padding: 3px 9px;
+  border: 1px solid #d3e3ef;
+  border-radius: 7px;
+  background: #e9f2f9;
+  color: var(--sketch-navy);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.sketch-meal-tabs { display: flex; align-items: center; gap: 8px; min-height: 31px; margin-block-start: 6px; }
+.sketch-meal-tabs button {
+  min-width: 62px;
+  min-height: 28px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 8px;
+  background: #eef4f8;
+  color: var(--sketch-ink);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+}
+.sketch-meal-tabs button[aria-pressed="true"] { background: var(--sketch-navy); color: #fff; }
+.sketch-meal-result { display: grid; gap: 8px; min-width: 0; overflow-wrap: anywhere; }
+.sketch-meal-result p { color: var(--sketch-muted); font-size: 13px; line-height: 18px; }
+.sketch-meal-list { margin: 0; padding-inline-start: 18px; font-size: 14px; line-height: 1.5; white-space: pre-line; }
+.sketch-meal-list li + li { margin-block-start: 4px; }
+.sketch-meal-item {
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: start;
+  white-space: inherit;
+  cursor: pointer;
+}
+.sketch-meal-item:hover { color: var(--sketch-link); text-decoration: underline; }
+.sketch-next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  min-height: 60px;
+  padding: 8px 15px;
+  border-radius: 12px;
+  background: #f8fbfe;
+  color: var(--sketch-ink);
+  text-align: left;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 18px;
+}
+.sketch-next strong { color: var(--sketch-link); white-space: nowrap; }
+.sketch-next span { text-align: right; font-weight: 500; overflow-wrap: anywhere; }
+.sketch-next:hover { border-color: #a6bfd2; }
+
+.sketch-courses { margin-top: 16px; padding: 14px 18px; min-height: 142px; }
+.sketch-courses ul { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; margin-top: 8px; }
+.sketch-courses li button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  width: 100%;
+  min-height: 66px;
+  height: 100%;
+  padding: 6px 12px;
+  border: 1px solid var(--sketch-line);
+  border-radius: 10px;
+  background: #f8fbfe;
+  color: var(--sketch-ink);
+  text-align: left;
+  cursor: pointer;
+}
+.sketch-courses li button:hover { background: #e8f2fb; }
+.sketch-courses li button > span:first-child { min-width: 0; }
+.sketch-courses li button > span:last-child { color: var(--sketch-link); font-size: 13px; font-weight: 700; }
+.sketch-courses small { margin-top: 3px; }
+
+@container (max-width: 900px) {
+  .sketch-columns { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .sketch-secondary { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+  .sketch-calendar { grid-row: span 2; }
+  .sketch-courses ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@container (max-width: 590px) {
+  .sketch-greeting { min-height: 0; }
+  .sketch-greeting h1 { font-size: 34px; }
+  .sketch-greeting p { font-size: 16px; }
+  .sketch-deadline-grid, .sketch-deadline-grid:has(> :nth-child(2):last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sketch-deadline[data-primary] { grid-column: 1 / -1; }
+  .sketch-secondary { grid-template-columns: minmax(0, 1fr); }
+  .sketch-calendar { grid-row: auto; }
+  .sketch-courses ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 1010px) {
+  .ast-let-him-cook > .ast-main[data-home] > main { padding-inline: 18px; }
+}

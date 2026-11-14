@@ -1,0 +1,29 @@
+.gradle/
+.gradle-user/
+build/
+models/
+recordings/
+logs/
+*.log
+.venv/
+.venv-pdf/
+.tools/
+.synesis/
+/.ast-study-data/
+__pycache__/
+.env
+.env.*
+!.env.example
+.vscode/settings.json
+.DS_Store
+:memory:.ses
+bin/
+tmp/
+backups/
+
+# Generated reports and packaged apps may include local credentials and user data.
+/output/
+credentials.env
+
+# Optional portable user store inside a checkout; production default is outside it.
+SYNESIS Data/

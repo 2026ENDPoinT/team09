@@ -1,0 +1,831 @@
+{
+  "source": {
+    "fileKey": "aJWeGbJa1QIindxzwTVzKy",
+    "nodeId": "53:184",
+    "frame": "SYNESIS / 학습 워크스페이스 / Mist navy",
+    "width": 1600,
+    "height": 1120
+  },
+  "tokens": {
+    "paper": "#ffffff",
+    "header": "#f7f9fc",
+    "soft": "#f5f8fc",
+    "panelLine": "#d8e1ee",
+    "answerLine": "#e3eaf4",
+    "text": "#53647c",
+    "muted": "#7a8ca3",
+    "ink": "#141414",
+    "shadow": "#203a60",
+    "pagePadding": 8,
+    "paneGap": 4,
+    "innerSpacing": [
+      12,
+      16,
+      20,
+      24
+    ],
+    "paneRadius": 12,
+    "headerHeight": 56,
+    "paneWidths": [
+      496,
+      648,
+      432
+    ]
+  },
+  "noise": false,
+  "rendering": {
+    "icons": "Original transparent PNG node exports",
+    "glass": "Code approximation of white fill, highlight and navy shadows; no noise texture",
+    "body": "Existing summary/concept renderer retained"
+  },
+  "icons": [
+    [
+      "back",
+      "53:191"
+    ],
+    [
+      "gear",
+      "53:211"
+    ],
+    [
+      "file",
+      "53:217"
+    ],
+    [
+      "dots",
+      "53:223"
+    ],
+    [
+      "previous",
+      "53:230"
+    ],
+    [
+      "next",
+      "53:235"
+    ],
+    [
+      "minus",
+      "53:239"
+    ],
+    [
+      "plus",
+      "53:243"
+    ],
+    [
+      "expand",
+      "53:247"
+    ],
+    [
+      "spark",
+      "53:400"
+    ],
+    [
+      "settings",
+      "53:407"
+    ],
+    [
+      "file-small",
+      "53:412"
+    ],
+    [
+      "copy",
+      "53:449"
+    ],
+    [
+      "like",
+      "53:452"
+    ],
+    [
+      "arrow",
+      "53:459"
+    ],
+    [
+      "chevron",
+      "53:467"
+    ],
+    [
+      "attach",
+      "53:472"
+    ],
+    [
+      "send",
+      "53:477"
+    ]
+  ],
+  "properties": [
+    {
+      "id": "53:185",
+      "name": "Study header / compact single row",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:3:4"
+            }
+          }
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokeTopWeight": 0,
+      "strokeBottomWeight": 0.10000000149011612,
+      "strokeLeftWeight": 0,
+      "strokeRightWeight": 0,
+      "cornerRadius": 0,
+      "effects": [
+        {
+          "type": "GLASS",
+          "visible": true,
+          "radius": 12,
+          "boundVariables": {},
+          "refraction": 0.019999999552965164,
+          "depth": 2,
+          "lightAngle": -45,
+          "lightIntensity": 0.2199999988079071,
+          "dispersion": 0
+        },
+        {
+          "type": "INNER_SHADOW",
+          "visible": true,
+          "radius": 1,
+          "boundVariables": {},
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 0.8999999761581421
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "spread": 0,
+          "blendMode": "NORMAL"
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 6,
+          "boundVariables": {},
+          "color": {
+            "r": 0.125490203499794,
+            "g": 0.22745098173618317,
+            "b": 0.3764705955982208,
+            "a": 0.0494999997317791
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ],
+      "paddingTop": 8,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingBottom": 8,
+      "itemSpacing": 74
+    },
+    {
+      "id": "53:214",
+      "name": "White learning workspace",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:3:4"
+            }
+          }
+        }
+      ],
+      "strokes": [],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 0,
+      "effects": [],
+      "paddingTop": 8,
+      "paddingLeft": 8,
+      "paddingRight": 8,
+      "paddingBottom": 8,
+      "itemSpacing": 4
+    },
+    {
+      "id": "53:215",
+      "name": "PDF source panel",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:3:4"
+            }
+          }
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8470588326454163,
+            "g": 0.8823529481887817,
+            "b": 0.9333333373069763
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 12,
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 10,
+          "boundVariables": {},
+          "color": {
+            "r": 0.125490203499794,
+            "g": 0.22745098173618317,
+            "b": 0.3764705955982208,
+            "a": 0.04050000011920929
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 2,
+          "boundVariables": {},
+          "color": {
+            "r": 0.125490203499794,
+            "g": 0.22745098173618317,
+            "b": 0.3764705955982208,
+            "a": 0.02250000089406967
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ],
+      "paddingTop": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingBottom": 0,
+      "itemSpacing": 0
+    },
+    {
+      "id": "53:216",
+      "name": "PDF heading",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9686274528503418,
+            "g": 0.9764705896377563,
+            "b": 0.9882352948188782
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokes": [],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 0,
+      "effects": [],
+      "paddingTop": 0,
+      "paddingLeft": 20,
+      "paddingRight": 16,
+      "paddingBottom": 0,
+      "itemSpacing": 8
+    },
+    {
+      "id": "53:319",
+      "name": "Learning summary panel",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:3:4"
+            }
+          }
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8470588326454163,
+            "g": 0.8823529481887817,
+            "b": 0.9333333373069763
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 12,
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 10,
+          "boundVariables": {},
+          "color": {
+            "r": 0.125490203499794,
+            "g": 0.22745098173618317,
+            "b": 0.3764705955982208,
+            "a": 0.04050000011920929
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 2,
+          "boundVariables": {},
+          "color": {
+            "r": 0.125490203499794,
+            "g": 0.22745098173618317,
+            "b": 0.3764705955982208,
+            "a": 0.02250000089406967
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ],
+      "paddingTop": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingBottom": 0,
+      "itemSpacing": 0
+    },
+    {
+      "id": "53:320",
+      "name": "Summary heading",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9686274528503418,
+            "g": 0.9764705896377563,
+            "b": 0.9882352948188782
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokes": [],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 0,
+      "effects": [],
+      "paddingTop": 0,
+      "paddingLeft": 24,
+      "paddingRight": 16,
+      "paddingBottom": 0,
+      "itemSpacing": 12
+    },
+    {
+      "id": "53:397",
+      "name": "AI tutor panel / light",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:3:4"
+            }
+          }
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8470588326454163,
+            "g": 0.8823529481887817,
+            "b": 0.9333333373069763
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 12,
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 10,
+          "boundVariables": {},
+          "color": {
+            "r": 0.125490203499794,
+            "g": 0.22745098173618317,
+            "b": 0.3764705955982208,
+            "a": 0.04050000011920929
+          },
+          "offset": {
+            "x": 0,
+            "y": 2
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 2,
+          "boundVariables": {},
+          "color": {
+            "r": 0.125490203499794,
+            "g": 0.22745098173618317,
+            "b": 0.3764705955982208,
+            "a": 0.02250000089406967
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ],
+      "paddingTop": 0,
+      "paddingLeft": 0,
+      "paddingRight": 0,
+      "paddingBottom": 0,
+      "itemSpacing": 0
+    },
+    {
+      "id": "53:398",
+      "name": "Tutor heading",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9686274528503418,
+            "g": 0.9764705896377563,
+            "b": 0.9882352948188782
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokes": [],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 0,
+      "effects": [],
+      "paddingTop": 0,
+      "paddingLeft": 20,
+      "paddingRight": 16,
+      "paddingBottom": 0,
+      "itemSpacing": 0
+    },
+    {
+      "id": "53:421",
+      "name": "User question / light gray",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9607843160629272,
+            "g": 0.9725490212440491,
+            "b": 0.9882352948188782
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokes": [],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 12,
+      "effects": [],
+      "paddingTop": 12,
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "paddingBottom": 12,
+      "itemSpacing": 0
+    },
+    {
+      "id": "53:429",
+      "name": "Tutor answer / white card",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {
+            "color": {
+              "type": "VARIABLE_ALIAS",
+              "id": "VariableID:3:4"
+            }
+          }
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8901960849761963,
+            "g": 0.9176470637321472,
+            "b": 0.95686274766922
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 12,
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 4,
+          "boundVariables": {},
+          "color": {
+            "r": 0.125490203499794,
+            "g": 0.22745098173618317,
+            "b": 0.3764705955982208,
+            "a": 0.02250000089406967
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ],
+      "paddingTop": 16,
+      "paddingLeft": 16,
+      "paddingRight": 16,
+      "paddingBottom": 16,
+      "itemSpacing": 12
+    },
+    {
+      "id": "53:431",
+      "name": "Simple numeric example",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9607843160629272,
+            "g": 0.9725490212440491,
+            "b": 0.9882352948188782
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokes": [],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 0,
+      "effects": [],
+      "paddingTop": 12,
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "paddingBottom": 12,
+      "itemSpacing": 4
+    },
+    {
+      "id": "53:469",
+      "name": "Ask tutor input",
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 0.9200000166893005,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8470588326454163,
+            "g": 0.8823529481887817,
+            "b": 0.9333333373069763
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokeWeight": 1,
+      "strokeTopWeight": 1,
+      "strokeBottomWeight": 1,
+      "strokeLeftWeight": 1,
+      "strokeRightWeight": 1,
+      "cornerRadius": 12,
+      "effects": [
+        {
+          "type": "GLASS",
+          "visible": true,
+          "radius": 18,
+          "boundVariables": {},
+          "refraction": 0.019999999552965164,
+          "depth": 2,
+          "lightAngle": -45,
+          "lightIntensity": 0.2199999988079071,
+          "dispersion": 0
+        },
+        {
+          "type": "INNER_SHADOW",
+          "visible": true,
+          "radius": 1,
+          "boundVariables": {},
+          "color": {
+            "r": 1,
+            "g": 1,
+            "b": 1,
+            "a": 0.8999999761581421
+          },
+          "offset": {
+            "x": 0,
+            "y": 1
+          },
+          "spread": 0,
+          "blendMode": "NORMAL"
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 12,
+          "boundVariables": {},
+          "color": {
+            "r": 0.125490203499794,
+            "g": 0.22745098173618317,
+            "b": 0.3764705955982208,
+            "a": 0.053999997675418854
+          },
+          "offset": {
+            "x": 0,
+            "y": 3
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": true
+        }
+      ],
+      "paddingTop": 12,
+      "paddingLeft": 12,
+      "paddingRight": 12,
+      "paddingBottom": 12,
+      "itemSpacing": 0
+    }
+  ]
+}

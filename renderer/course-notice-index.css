@@ -1,0 +1,76 @@
+.course-notice-index {
+  --notice-accent: var(--mono-green, #315e51);
+  --notice-line: #dce5eb;
+  --notice-muted: #4e6372;
+  --notice-ink: #172834;
+  container: course-notices / inline-size;
+}
+
+.course-notice-index .intro { gap: 10px; }
+.course-notice-index .intro h1 { margin: 0; }
+.course-notice-index-refresh { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
+.course-notice-index-refresh img, .course-notice-index .notice-search img { width: 16px; height: 16px; }
+.course-notice-index-controls { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+.course-notice-index-controls .notice-search { margin: 0; }
+.course-notice-index-tags { gap: 12px; }
+.course-notice-index-tags .notice-chip {
+  min-height: 34px;
+  font-size: 13px;
+  line-height: 1.35;
+}
+.course-notice-index .notice-scope button { justify-self: start; }
+
+.course-notice-index-board {
+  display: grid;
+  min-width: 0;
+  height: clamp(420px, calc(100dvh - 300px), 770px);
+  border: 1px solid var(--notice-line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--notice-ink);
+  overflow: hidden;
+}
+.course-notice-index-list, .course-notice-index-reader { grid-area: 1 / 1; }
+.course-notice-index-rows { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.course-notice-index .course-notice-index-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 5px;
+  padding: 9px 11px;
+  border: 1px solid var(--notice-line);
+  border-radius: 8px;
+  background: #fff;
+}
+.course-notice-index .course-notice-index-row:hover { border-color: #acc5d5; }
+.course-notice-index .course-notice-index-row[aria-current] { border-color: #9fbfd6; background: #e4f0f8; }
+.course-notice-index-meta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 10px;
+  color: var(--notice-muted);
+  font-size: 12px;
+}
+.course-notice-index-meta > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.course-notice-index-meta time { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.course-notice-index-more { margin-block: 10px 2px; width: 100%; }
+.course-notice-index-back { margin-block-end: 13px; }
+.course-notice-index-reader h2:focus { outline: none; }
+.course-notice-index-preview-status { color: var(--notice-muted); }
+.course-notice-index .course-notice-body-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px; margin-block-start: 12px; }
+.course-notice-index .course-notice-body-actions .notice-original { margin: 0; }
+
+@container course-notices (min-width: 640px) {
+  .course-notice-index-board { grid-template-columns: minmax(220px, 34%) minmax(0, 1fr); }
+  .course-notice-index-board .course-notice-index-reader { grid-column: 2; border-inline-start: 1px solid var(--notice-line); }
+  .course-notice-index-board .course-notice-index-back { display: none; }
+}
+
+@container course-notices (width < 640px) {
+  .course-notice-index-board:not([data-reading="true"]) .course-notice-index-reader,
+  .course-notice-index-board[data-reading="true"] .course-notice-index-list { visibility: hidden; }
+}
+
+@container course-notices (max-width: 490px) {
+  .course-notice-index-controls { gap: 10px; padding: 12px; }
+}

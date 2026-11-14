@@ -1,0 +1,216 @@
+.ast-let-him-cook[data-mode] > .ast-main > main:has(> .ast-timetable-screen:not([hidden])) {
+  padding-inline: clamp(18px, 2.2vw, 32px);
+}
+
+.timetable-screen[data-layout] {
+  --timetable-ink: #172d3d;
+  --timetable-muted: #506578;
+  --timetable-accent: #265474;
+  --timetable-navy: #20384c;
+  --timetable-today: #edf6fc;
+  --timetable-weekend: #f8fafc;
+  --timetable-deadline-ink: #8f323d;
+  --timetable-deadline-fill: #fbe7e7;
+  --timetable-line: #e2eaf1;
+  --timetable-control-line: #d7e4ee;
+  --timetable-hour-height: 52px;
+  --timetable-axis-width: 74px;
+  max-inline-size: 1184px;
+  margin-inline: auto;
+  padding-block-end: 25px;
+  background: transparent;
+  .timetable-toolbar { min-block-size: 80px; max-inline-size: none; align-items: center; justify-content: space-between; }
+  .timetable-title p { margin-block-end: 3px; color: var(--timetable-accent); font-size: 13px; font-weight: 500; line-height: 18px; }
+  .timetable-toolbar h1 { font-size: clamp(27px, 4.6cqi, 35px); line-height: 1.37; letter-spacing: -.55px; }
+  .timetable-options { min-block-size: 48px; max-inline-size: none; margin-block-start: 14px; align-items: center; }
+  .timetable-period, .timetable-navigation, .timetable-views { display: flex; align-items: center; }
+  .timetable-period { flex-wrap: wrap; gap: 6px 12px; }
+  .timetable-period h2 { font-size: clamp(18px, 3.1cqi, 24px); line-height: 32px; letter-spacing: -.55px; }
+  .timetable-period-year { margin-inline-start: 8px; color: var(--timetable-muted); font-size: 13px; font-weight: 500; letter-spacing: normal; white-space: nowrap; }
+  .timetable-navigation { flex: none; gap: 5px; }
+  .timetable-actions { gap: 10px; }
+  :is(.timetable-navigation, .timetable-views, .timetable-filters) button, .timetable-refresh {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-inline-size: 0;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: var(--timetable-accent);
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .timetable-navigation button, .timetable-refresh { min-block-size: 36px; border: 1px solid var(--timetable-control-line); background: #fff; }
+  .timetable-navigation button[aria-label] { inline-size: 36px; padding: 0; }
+  .timetable-refresh { gap: 7px; }
+  .timetable-refresh:disabled { color: var(--timetable-muted); cursor: wait; }
+  .timetable-navigation button:hover, .timetable-refresh:hover:not(:disabled) { background: var(--timetable-today); }
+  :is(.timetable-navigation, .timetable-refresh) img { display: block; flex: none; }
+  .timetable-views, .timetable-filters { gap: 3px; padding: 3px; border: 1px solid var(--timetable-control-line); border-radius: 11px; }
+  .timetable-views { background: #f4f8fb; }
+  .timetable-views button { min-inline-size: clamp(60px, 11cqi, 83px); min-block-size: 34px; }
+  .timetable-views button[aria-pressed="true"] { background: var(--timetable-navy); color: #fff; }
+  .timetable-filters { gap: 4px; padding-block: 2px; border-radius: 9px; background: #fff; }
+  .timetable-filters button { min-block-size: 30px; box-shadow: none; }
+  .timetable-filters button:last-child { color: var(--timetable-deadline-ink); }
+  .timetable-filters button[aria-pressed="true"] { background: #e7f0f8; }
+  .timetable-filters button:last-child[aria-pressed="true"] { background: var(--timetable-deadline-fill); }
+  :is(.timetable-views, .timetable-filters) button[aria-pressed="false"]:hover { background: var(--timetable-today); filter: none; }
+  .timetable-filters button span { margin: 0; }
+  .timetable-content { margin-block-start: 14px; }
+
+  .timetable-scroll {
+    padding: clamp(10px, 1.3cqi, 15px);
+    padding-block-end: clamp(14px, 1.7cqi, 20px);
+    border: 1px solid var(--timetable-control-line);
+    border-radius: 16px;
+    background: #fff;
+  }
+  .timetable-grid {
+    min-inline-size: calc(var(--timetable-axis-width) + 7 * 92px);
+    grid-template-columns: var(--timetable-axis-width) repeat(7, minmax(0, 1fr));
+    grid-template-rows: 44px minmax(60px, auto) auto;
+    row-gap: 0;
+  }
+  .timetable-grid[data-filter="classes"] { grid-template-rows: 44px auto; }
+  .timetable-grid[data-filter="deadlines"] { grid-template-rows: 44px minmax(60px, auto); }
+  .timetable-axis { inset-inline-start: 0; }
+  .timetable-heading { gap: 5px; padding: 8px 10px; font-size: 15px; }
+  .timetable-axis .timetable-heading { color: var(--timetable-muted); font-size: 11px; }
+  .timetable-day[data-weekend] .timetable-heading { color: var(--timetable-muted); }
+  .timetable-day .timetable-heading[data-today] { border-radius: 8px; color: var(--timetable-accent); }
+  .timetable-today-badge { padding: 3px 8px; border-radius: 7px; background: var(--timetable-navy); color: #fff; font-size: 11px; font-weight: 700; line-height: 16px; }
+
+  :is(.timetable-deadline-label, .timetable-deadline-cell) { border-block: 1px solid var(--timetable-line); background: #f4f8fb; }
+  .timetable-deadline-label {
+    display: flex;
+    align-items: center;
+    padding-inline: 8px;
+    border-inline-start: 1px solid var(--timetable-line);
+    border-radius: 8px 0 0 8px;
+    color: var(--timetable-deadline-ink);
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 16px;
+  }
+  .timetable-deadline-cell { min-block-size: 60px; padding: 4px 5px; }
+  .timetable-day:last-child .timetable-deadline-cell { border-inline-end: 1px solid var(--timetable-line); border-radius: 0 8px 8px 0; }
+  .timetable-deadline-cell .timetable-deadline {
+    justify-content: center;
+    gap: 3px;
+    min-block-size: 50px;
+    padding: 5px 8px;
+    border: 1px solid #f0c9cd;
+    border-radius: 8px;
+    background: var(--timetable-deadline-fill);
+    line-height: 16px;
+  }
+  .timetable-deadline-cell .timetable-deadline strong { font-size: 13px; }
+  .timetable-hour { padding: 3px 9px 0; font-size: 12px; }
+  .timetable-day[data-weekend] .timetable-slots { background-color: var(--timetable-weekend); }
+  .timetable-day .timetable-slots[data-today] { background-color: var(--timetable-today); }
+
+  .timetable-class--0 { --timetable-card: #e2effb; --timetable-card-line: #c4ddf1; --timetable-card-accent: #285b86; }
+  .timetable-class--1 { --timetable-card: #edf0fa; --timetable-card-line: #d5dcf2; --timetable-card-accent: #455486; }
+  .timetable-class--2 { --timetable-card: #f9eedd; --timetable-card-line: #ebdbbf; --timetable-card-accent: #805527; }
+  .timetable-class--3 { --timetable-card: #f6eaf4; --timetable-card-line: #ebd4e8; --timetable-card-accent: #7a4e75; }
+  .timetable-class--4 { --timetable-card: #e4f2ec; --timetable-card-line: #cbe3d9; --timetable-card-accent: #306956; }
+  .timetable-class--5 { --timetable-card: #efebfa; --timetable-card-line: #dbd2f2; --timetable-card-accent: #5d4a8a; }
+  .timetable-class-content {
+    position: relative;
+    block-size: calc(100% - min(8px, 14%));
+    inset-block-start: 4px;
+    margin-inline: min(7px, 5%);
+    padding: 9px min(9px, 7%) 7px 12px;
+    border: 1px solid var(--timetable-card-line);
+    border-radius: 9px;
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .timetable-class-content::before {
+    position: absolute;
+    inset-block-start: 9px;
+    inset-inline-start: 2px;
+    inline-size: 3px;
+    block-size: min(28px, 55%);
+    border-radius: 2px;
+    background: var(--timetable-card-accent);
+    content: "";
+  }
+  .timetable-class-content time { color: var(--timetable-card-accent); }
+  .timetable-class-content strong { font-size: 14px; line-height: 19px; }
+  .timetable-class[data-compact] .timetable-class-content { inset-block-start: 2px; padding-block: 3px; line-height: 15px; }
+  .timetable-class[data-compact] .timetable-class-content > * + * { margin-block-start: 1px; }
+  .timetable-class[data-compact] .timetable-class-content strong { font-size: 12px; line-height: 16px; }
+
+  .timetable-month { min-inline-size: calc(7 * 92px + 8px); border: 0; }
+  .timetable-month-headings, .timetable-month-days { grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1px; }
+  .timetable-month-headings { padding-inline: 1px; }
+  .timetable-month-weekday { display: flex; align-items: center; min-block-size: 35px; padding: 0 11px; font-size: 12px; }
+  .timetable-month-weekday[data-weekend] { color: var(--timetable-muted); }
+  .timetable-month-days {
+    overflow: clip;
+    border: 1px solid var(--timetable-control-line);
+    border-radius: 9px;
+    background: var(--timetable-line);
+  }
+  .timetable-month-day {
+    min-inline-size: 0;
+    min-block-size: 60px;
+    gap: 2px;
+    padding: 4px 6px 6px;
+    border: 0;
+    background: #fff;
+  }
+  .timetable-month-day:has(.timetable-month-class, .timetable-deadline) { min-block-size: 76px; padding-block-end: 12px; }
+  .timetable-month-day:nth-last-child(n+8):has(.timetable-month-class, .timetable-deadline) { min-block-size: 90px; }
+  .timetable-month-day[data-weekend] { background: var(--timetable-weekend); }
+  .timetable-month-day[data-outside] { background: #f1f5f8; color: #637689; }
+  .timetable-month-day[data-today] { background: var(--timetable-today); }
+  .timetable-month-date { display: inline-flex; align-items: center; gap: 5px; min-inline-size: 20px; min-block-size: 18px; padding: 0; line-height: 18px; }
+  .timetable-month-date:hover time { text-decoration: underline; }
+  .timetable-month-date[aria-current] { color: var(--timetable-accent); }
+  .timetable-month-date .timetable-today-badge { padding-block: 1px; font-size: 10px; line-height: 16px; }
+  .timetable-month-class, .timetable-month-day .timetable-deadline { display: flex; flex-direction: row; align-items: center; gap: 5px; line-height: 16px; }
+  .timetable-month-class { min-block-size: 18px; padding: 0 0 0 1px; background: transparent; }
+  .timetable-month-class img { display: block; flex: none; }
+  .timetable-month-class time { flex: none; color: #3e566a; font-variant-numeric: tabular-nums; }
+  .timetable-month-class span, .timetable-month-day .timetable-deadline strong { min-inline-size: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .timetable-month-day .timetable-deadline { min-block-size: 21px; padding: 2px 4px; border-radius: 5px; background: var(--timetable-deadline-fill); }
+  .timetable-month-day .timetable-deadline strong { color: var(--timetable-deadline-ink); line-height: 16px; }
+  .timetable-month-day .timetable-due-badge { flex: none; font-size: 10px; white-space: nowrap; }
+
+  .timetable-summary { grid-template-columns: minmax(0, 1fr); min-block-size: 0; gap: 7px; margin-block-start: 14px; padding: 0; background: transparent; }
+  .timetable-summary-header { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 5px 14px; }
+  .timetable-summary h2 { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font-size: 18px; line-height: 25px; }
+  .timetable-summary-header p, .timetable-room-note { color: var(--timetable-muted); font-size: 12px; line-height: 17px; }
+  .timetable-room-note { margin-block-start: 10px; text-align: end; }
+  .timetable-summary .timetable-due-badge { margin: 0; padding: 3px 8px; border-radius: 7px; background: var(--timetable-deadline-fill); font-size: 11px; line-height: 16px; }
+  .timetable-summary ul { grid-template-columns: repeat(auto-fill, minmax(min(100%, max(245px, (100% - 20px) / 3)), 1fr)); gap: 10px; }
+  .timetable-summary li { min-inline-size: 0; }
+  .timetable-summary .timetable-deadline {
+    position: relative;
+    block-size: 100%;
+    min-block-size: 110px;
+    gap: 5px;
+    padding: 9px 32px 9px 11px;
+    border: 1px solid var(--timetable-control-line);
+    border-radius: 12px;
+    background: #fff;
+  }
+  .timetable-summary .timetable-deadline strong { line-height: 18px; }
+  .timetable-summary .timetable-deadline:hover { border-color: #aac5dc; background: #fafdff; }
+  .timetable-summary-date { display: flex; flex-wrap: wrap; align-items: center; gap: 3px 8px; color: var(--timetable-deadline-ink); font-weight: 700; }
+  .timetable-summary-date time { white-space: nowrap; }
+  .timetable-summary-icon { position: absolute; inset-block-start: 14px; inset-inline-end: 13px; }
+
+  &[data-view="week"] .timetable-summary ul { grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); }
+  &[data-view="week"] .timetable-summary ul:has(> :only-child) { grid-template-columns: minmax(0, 428px); }
+  &[data-view="week"] .timetable-summary .timetable-deadline { min-block-size: 98px; }
+}

@@ -1,0 +1,77 @@
+{
+  "fileKey": "aJWeGbJa1QIindxzwTVzKy",
+  "frameId": "94:366",
+  "frame": "SYNESIS / 내 정보 / Desktop 16:9",
+  "assets": [
+    {
+      "name": "shield",
+      "nodeId": "95:405",
+      "logicalWidth": 18,
+      "logicalHeight": 18,
+      "scale": 3
+    },
+    {
+      "name": "bell",
+      "nodeId": "95:434",
+      "logicalWidth": 16,
+      "logicalHeight": 16,
+      "scale": 3
+    },
+    {
+      "name": "notifications-on",
+      "nodeId": "95:439",
+      "logicalWidth": 40,
+      "logicalHeight": 22,
+      "scale": 3
+    },
+    {
+      "name": "download",
+      "nodeId": "95:443",
+      "logicalWidth": 16,
+      "logicalHeight": 16,
+      "scale": 3
+    },
+    {
+      "name": "wallet",
+      "nodeId": "95:473",
+      "logicalWidth": 18,
+      "logicalHeight": 18,
+      "scale": 3
+    },
+    {
+      "name": "arrow",
+      "nodeId": "95:495",
+      "logicalWidth": 16,
+      "logicalHeight": 16,
+      "scale": 3
+    },
+    {
+      "name": "book",
+      "nodeId": "95:501",
+      "logicalWidth": 16,
+      "logicalHeight": 16,
+      "scale": 3
+    },
+    {
+      "name": "next",
+      "nodeId": "95:505",
+      "logicalWidth": 14,
+      "logicalHeight": 14,
+      "scale": 3
+    },
+    {
+      "name": "help",
+      "nodeId": "95:509",
+      "logicalWidth": 16,
+      "logicalHeight": 16,
+      "scale": 3
+    },
+    {
+      "name": "logout",
+      "nodeId": "95:523",
+      "logicalWidth": 14,
+      "logicalHeight": 14,
+      "scale": 3
+    }
+  ]
+}

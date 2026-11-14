@@ -1,0 +1,119 @@
+.chat-answer-text { font-size: var(--chat-font-size); line-height: 1.7; }
+.chat-answer-text > * + * { margin-block-start: 1em; }
+.chat-answer-text p, .chat-list-detail { white-space: pre-wrap; }
+.chat-answer-text h3 { font-size: 1.16em; }
+.chat-answer-text h4 { font-size: 1.05em; }
+.chat-answer-text :is(h3, h4) {
+  margin-inline: 0;
+  margin-block-end: 0;
+  color: var(--chat-text);
+  font-weight: 750;
+  line-height: 1.4;
+}
+.chat-answer-text :is(h3, h4):not(:first-child) {
+  padding-block-start: .75em;
+  border-block-start: 1px solid var(--chat-line);
+}
+.chat-answer-text :is(h3, h4) + * { margin-block-start: .45em; }
+.chat-answer-text strong { font-weight: 700; }
+.chat-answer-text :is(ul, ol) { margin-bottom: 0; padding-left: 1.35em; }
+.chat-answer-text > :first-child { margin-top: 0; }
+.chat-answer-text li + li { margin-block-start: .6em; }
+.chat-answer-text li::marker { color: var(--chat-answer-accent, var(--chat-muted)); font-weight: 700; }
+.chat-answer-text blockquote {
+  margin-inline: 0;
+  margin-block-end: 0;
+  padding: .55em .75em;
+  border-inline-start: 3px solid var(--chat-answer-accent, var(--chat-line));
+  border-radius: 0 8px 8px 0;
+  background: var(--chat-answer-quote, var(--chat-surface));
+}
+.chat-answer-text hr { margin-block-end: 0; border: 0; border-block-start: 1px solid var(--chat-line); }
+.chat-list-detail { display: block; margin-top: 2px; color: var(--chat-muted); font-size: .87em; }
+.chat-deadline-badge {
+  display: inline-block;
+  margin-inline-end: 3px;
+  padding: 1px 7px;
+  border-radius: 5px;
+  background: #dbeee4;
+  color: #184232;
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+}
+.chat-deadline-badge[data-overdue] { background: #fae6dc; color: #782b1f; }
+.chat-answer-text li:has(> .chat-deadline-badge) { margin-inline-start: -1.35em; list-style: none; }
+.chat-answer-text li:has(> .chat-deadline-badge) + li { margin-block-start: .65em; }
+.chat-answer-text :not(pre) > code { padding: 2px 4px; border-radius: 4px; background: #3e434c; font-size: .92em; }
+
+.chat-markdown-table {
+  max-inline-size: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--chat-line);
+  border-radius: 8px;
+  scrollbar-width: thin;
+}
+.chat-markdown-table table { width: 100%; border-collapse: collapse; font-size: .9em; line-height: 1.5; }
+.chat-markdown-table :is(th, td) { min-inline-size: 5em; padding: .45em .65em; text-align: start; vertical-align: top; }
+.chat-markdown-table th { background: var(--chat-answer-quote, var(--chat-surface)); color: var(--chat-text); }
+.chat-markdown-table td { border-block-start: 1px solid var(--chat-line); }
+.chat-markdown-table [data-align="center"] { text-align: center; }
+.chat-markdown-table [data-align="right"] { text-align: right; }
+
+.chat-code-block {
+  min-width: 0;
+  border: 1px solid var(--chat-line);
+  border-radius: 9px;
+  background: #191d24;
+}
+.chat-code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 3px 8px 3px 11px;
+  border-bottom: 1px solid var(--chat-line);
+  border-radius: 8px 8px 0 0;
+  background: var(--chat-surface);
+  color: var(--chat-muted);
+  font-size: var(--chat-meta-size);
+}
+.chat-code-header > button { flex-shrink: 0; }
+.chat-code-block pre {
+  margin: 0;
+  padding: 9px 11px;
+  overflow-x: auto;
+  white-space: pre;
+  overflow-wrap: normal;
+  tab-size: 4;
+  scrollbar-width: thin;
+  color: var(--chat-text);
+  font: var(--chat-secondary-size)/1.6 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.chat-code-block pre:focus-visible { outline: 2px solid #9cbcfb; outline-offset: -2px; }
+.chat-code-block pre code { font: inherit; }
+.chat-inline-source {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .45em;
+  max-inline-size: 100%;
+  min-block-size: 1.75em;
+  margin-block: .12em;
+  padding: .18em .55em;
+  border: 1px solid var(--chat-link-border, var(--chat-line));
+  border-radius: 8px;
+  background: var(--chat-link-bg, var(--chat-surface));
+  color: var(--chat-link-text, #c3d7ff);
+  font-family: inherit;
+  font-size: .9em;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: start;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.chat-inline-source > span:first-child { min-inline-size: 0; overflow-wrap: anywhere; white-space: normal; }
+.chat-inline-source-arrow { flex: none; font-size: .9em; }
+.chat-inline-source:hover {
+  border-color: currentColor;
+  background: var(--chat-link-hover, var(--chat-line));
+}

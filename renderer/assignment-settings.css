@@ -1,0 +1,22 @@
+.assignment-settings-toggle { display: flex; align-items: center; gap: 10px; margin-top: 14px; font-size: 14px; }
+.assignment-settings-toggle input { flex: none; width: 17px; height: 17px; margin: 0; accent-color: #315e51; }
+.assignment-settings-range { display: grid; gap: 8px; margin: 14px 0 0 27px; font-size: 13px; }
+.assignment-settings-range[data-inactive] { opacity: 0.55; }
+.assignment-settings-range input { width: 82px; padding: 6px 8px; border: 1px solid #a7b7af; border-radius: 6px; font: inherit; }
+.assignment-settings p { margin-top: 12px; color: #52645b; font-size: 13px; }
+.assignment-settings p[role="alert"] { color: #9e2e22; }
+.assignment-settings footer p { margin: 0; }
+.assignment-font-preference { display: grid; gap: 6px; padding-block-start: 14px; margin-block-start: 16px; border-block-start: 1px solid #dde7ef; }
+.assignment-font-preference label { color: #4d6475; font-size: 13px; }
+.assignment-font-preference select {
+  min-block-size: 36px;
+  min-inline-size: 0;
+  padding: 5px 8px;
+  border: 1px solid #8395a2;
+  border-radius: 6px;
+  color: #182c3b;
+  background: #fff;
+  font: inherit;
+  font-size: 14px;
+}
+.assignment-font-preference p { margin: 0; }

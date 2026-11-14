@@ -1,0 +1,215 @@
+.timetable-screen {
+  --timetable-ink: #24272a;
+  --timetable-muted: #6d7278;
+  --timetable-accent: #38655f;
+  --timetable-today: #e9f0ed;
+  --timetable-deadline-ink: #b14e49;
+  --timetable-line: #eceeee;
+  --timetable-control-line: #e2e5e5;
+  --timetable-hour-height: 61px;
+  --timetable-axis-width: clamp(46px, 5vw, 68px);
+  container-type: inline-size;
+  min-width: 0;
+  color: var(--timetable-ink);
+  background: #fff;
+}
+
+.timetable-toolbar, .timetable-options, .timetable-filters, .timetable-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.timetable-toolbar { min-height: 48px; max-width: 1080px; align-items: flex-start; }
+.timetable-toolbar h1 { margin: 0; flex: 0 1 170px; font-size: 25px; line-height: 38px; letter-spacing: normal; }
+.timetable-toolbar h2 { flex: 1 0 auto; margin-top: 2px; font-size: 20px; line-height: 30px; font-variant-numeric: tabular-nums; }
+.timetable-refresh {
+  min-height: 34px;
+  min-width: 64px;
+  padding: 4px 10px;
+  border: 1px solid var(--timetable-control-line);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--timetable-ink);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.timetable-refresh:hover:not(:disabled) { background: #f5f5f2; }
+.timetable-refresh:disabled { cursor: wait; color: var(--timetable-muted); }
+.timetable-options { min-height: 36px; max-width: 1018px; margin-top: 16px; justify-content: space-between; }
+.timetable-filters { gap: 10px; }
+.timetable-filters button {
+  min-height: 28px;
+  min-width: 80px;
+  border: 0;
+  border-radius: 4px;
+  padding: 4px 8px;
+  background: #f1f2f1;
+  color: var(--timetable-muted);
+  text-align: left;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.timetable-filters button:first-child { min-width: 100px; background: var(--timetable-today); color: var(--timetable-accent); }
+.timetable-filters button:last-child { background: #f9ebe8; color: var(--timetable-deadline-ink); }
+.timetable-filters button[aria-pressed="true"] { box-shadow: inset 0 -2px currentColor; }
+.timetable-filters button:first-child[aria-pressed="true"] { box-shadow: none; }
+.timetable-filters button:hover { filter: brightness(.96); }
+.timetable-filters button span { margin-left: 4px; font-variant-numeric: tabular-nums; }
+.timetable-content { margin-top: 16px; }
+.timetable-content > .notice-inline-error { margin-block: 0 12px; }
+.timetable-empty { margin-top: 12px; color: var(--timetable-muted); font-size: 13px; }
+
+.timetable-scroll { overflow-x: auto; scrollbar-width: thin; }
+.timetable-scroll:focus-visible { outline: 2px solid var(--timetable-accent); outline-offset: 2px; }
+.timetable-grid {
+  display: grid;
+  grid-template-columns: var(--timetable-axis-width) repeat(7, minmax(96px, 1fr));
+  grid-template-rows: 45px auto auto;
+  row-gap: 16px;
+}
+.timetable-grid[data-filter="classes"] { grid-template-rows: 45px auto; row-gap: 0; }
+.timetable-grid[data-filter="deadlines"] { grid-template-rows: 45px auto; }
+.timetable-axis, .timetable-day { display: grid; grid-row: 1 / -1; grid-template-rows: subgrid; min-width: 0; }
+.timetable-axis { position: sticky; left: 0; z-index: 1; background: #fff; }
+.timetable-heading {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  white-space: nowrap;
+}
+.timetable-heading[data-today] { background: var(--timetable-today); color: var(--timetable-accent); }
+.timetable-deadline-label { color: var(--timetable-muted); font-size: 12px; }
+.timetable-deadline-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-height: 86px;
+  padding: 6px;
+  background: #fafaf8;
+}
+.timetable-deadline {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--timetable-muted);
+  text-align: left;
+  font-size: 11px;
+  line-height: 17px;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.timetable-deadline strong { color: var(--timetable-ink); font-size: 12px; line-height: 18px; }
+.timetable-deadline:hover strong { text-decoration: underline; }
+.timetable-due-badge { color: var(--timetable-deadline-ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+.timetable-hour { height: var(--timetable-hour-height); color: var(--timetable-muted); font-size: 11px; line-height: 17px; }
+.timetable-slots {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: solid var(--timetable-line);
+  border-width: 1px 0 0 1px;
+  background: repeating-linear-gradient(to bottom,
+    transparent 0 calc(var(--timetable-hour-height) - 1px),
+    var(--timetable-line) calc(var(--timetable-hour-height) - 1px) var(--timetable-hour-height));
+  box-shadow: inset 0 -1px var(--timetable-line);
+}
+.timetable-day:last-child .timetable-slots { border-right-width: 1px; }
+.timetable-slots[data-today] { background-color: #f5f9f7; }
+.timetable-class { position: absolute; }
+.timetable-class--0 { --timetable-card: #e9f0ed; }
+.timetable-class--1 { --timetable-card: #edf0f4; }
+.timetable-class--2 { --timetable-card: #f3efe7; }
+.timetable-class--3 { --timetable-card: #f4edee; }
+.timetable-class--4 { --timetable-card: #ececf2; }
+.timetable-class-content {
+  height: calc(100% - min(6px, 12%));
+  margin-inline: min(7px, 6%);
+  padding: min(9px, 7%);
+  overflow: auto;
+  overflow-wrap: anywhere;
+  scrollbar-width: thin;
+  border-radius: 4px;
+  background: var(--timetable-card);
+  color: var(--timetable-muted);
+  font-size: 11px;
+  line-height: 17px;
+}
+.timetable-class-content:focus-visible { outline: 2px solid var(--timetable-accent); outline-offset: -2px; }
+.timetable-class-content > * { display: block; }
+.timetable-class-content > * + * { margin-top: 4px; }
+.timetable-class-content strong { color: var(--timetable-ink); font-size: 13px; line-height: 20px; }
+.timetable-class-content small { display: block; font-size: 10px; }
+.timetable-class-content time { color: var(--timetable-accent); font-weight: 700; font-variant-numeric: tabular-nums; }
+.timetable-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.timetable-summary {
+  display: grid;
+  grid-template-columns: minmax(100px, 155px) minmax(0, 1fr);
+  align-items: start;
+  min-height: 118px;
+  gap: 24px;
+  margin-top: 20px;
+  padding: 14px;
+  background: #f5f5f2;
+}
+.timetable-summary h2 { font-size: 17px; line-height: 26px; }
+.timetable-summary h2 span { display: block; }
+.timetable-summary ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 158px), 1fr));
+  gap: 16px 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.timetable-summary .timetable-deadline { font-size: 12px; line-height: 18px; }
+.timetable-summary .timetable-deadline strong { font-size: 14px; line-height: 21px; }
+.timetable-summary p { color: var(--timetable-muted); font-size: 13px; }
+
+.timetable-month { border-bottom: 1px solid var(--timetable-line); }
+.timetable-month-headings, .timetable-month-days { display: grid; grid-template-columns: repeat(7, minmax(100px, 1fr)); }
+.timetable-month-weekday { padding: 9px; font-size: 14px; font-weight: 700; }
+.timetable-month-day {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 104px;
+  padding: 6px;
+  border: solid var(--timetable-line);
+  border-width: 1px 0 0 1px;
+}
+.timetable-month-day:nth-child(7n) { border-right-width: 1px; }
+.timetable-month-day[data-outside] { background: #fafaf8; color: var(--timetable-muted); }
+.timetable-month-day[data-today] { background: #f5f9f7; }
+.timetable-month-date { align-self: flex-start; border: 0; border-radius: 4px; background: transparent; color: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.timetable-month-date:hover, .timetable-month-date[aria-current] { background: var(--timetable-today); color: var(--timetable-accent); }
+.timetable-month-class, .timetable-month-day .timetable-deadline { padding: 3px 4px; border-radius: 4px; background: var(--timetable-today); font-size: 11px; overflow-wrap: anywhere; }
+.timetable-month-class time { color: var(--timetable-accent); font-weight: 700; }
+.timetable-month-day .timetable-deadline { display: block; background: #f9ebe8; }
+.timetable-month-day .timetable-deadline strong { font-size: 11px; }
+
+@container (max-width: 880px) {
+  .timetable-toolbar h1 { flex-basis: auto; }
+}
+
+@container (max-width: 640px) {
+  .timetable-toolbar { align-items: center; }
+  .timetable-toolbar h2 { flex: 1 1 auto; font-size: 17px; }
+  .timetable-summary { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .timetable-summary h2 span { display: inline; margin-right: .4em; }
+}

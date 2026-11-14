@@ -1,0 +1,152 @@
+:root {
+  --ast-interaction-ease: cubic-bezier(.22, .8, .24, 1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ast-let-him-cook[data-sidebar-moving] {
+    transition: grid-template-columns 320ms var(--ast-interaction-ease);
+  }
+
+  .ast-let-him-cook[data-sidebar-moving] > .ast-navigation {
+    overflow-x: hidden;
+    transition: opacity 180ms var(--ast-interaction-ease),
+      padding-inline 320ms var(--ast-interaction-ease),
+      display 320ms allow-discrete;
+  }
+
+  .ast-let-him-cook[data-sidebar-moving] > .ast-navigation[hidden] {
+    opacity: 0;
+    padding-inline: 0;
+  }
+
+  .ast-let-him-cook[data-sidebar-moving] > .ast-navigation > * {
+    transition: translate 320ms var(--ast-interaction-ease);
+  }
+
+  .ast-let-him-cook[data-sidebar-moving] > .ast-navigation[hidden] > * {
+    translate: -14px 0;
+  }
+
+  @starting-style {
+    .ast-let-him-cook[data-sidebar-moving] > .ast-navigation:not([hidden]) {
+      opacity: 0;
+      padding-inline: 0;
+    }
+
+    .ast-let-him-cook[data-sidebar-moving] > .ast-navigation:not([hidden]) > * {
+      translate: -14px 0;
+    }
+  }
+
+  .ast-sidebar-toggle {
+    transition: background-color 180ms, color 180ms, scale 220ms var(--ast-interaction-ease);
+  }
+
+  .ast-sidebar-toggle:active { scale: .94; }
+
+  /* Capture the visible pane so its scroll position and surrounding chrome stay in place. */
+  :root:active-view-transition-type(ast-screen) { view-transition-name: none; }
+
+  :root:active-view-transition-type(ast-screen) .ast-let-him-cook > .ast-main {
+    view-transition-name: ast-screen;
+  }
+
+  ::view-transition { pointer-events: none; }
+  ::view-transition-group(ast-screen) { animation: none; }
+  ::view-transition-image-pair(ast-screen) { overflow: clip; }
+
+  ::view-transition-old(ast-screen), ::view-transition-new(ast-screen) { mix-blend-mode: normal; }
+
+  ::view-transition-old(ast-screen) {
+    animation: ast-screen-out 160ms cubic-bezier(.4, 0, 1, 1) both;
+  }
+
+  ::view-transition-new(ast-screen) {
+    animation: ast-screen-in 480ms var(--ast-interaction-ease) 160ms both;
+  }
+
+  /* The palette contains gradients, so blend the two views while the switch stays live. */
+  :root:active-view-transition-type(ast-mode) { view-transition-name: none; }
+  :root:active-view-transition-type(ast-mode) .ast-workspace { view-transition-name: ast-mode; }
+  :root:active-view-transition-type(ast-mode) .ast-mode-switch { view-transition-name: ast-mode-switch; }
+
+  ::view-transition-group(ast-mode),
+  ::view-transition-group(ast-mode-switch) { animation: none; }
+
+  ::view-transition-image-pair(ast-mode) { isolation: isolate; }
+
+  ::view-transition-old(ast-mode), ::view-transition-new(ast-mode) {
+    animation-duration: 560ms;
+    animation-timing-function: cubic-bezier(.33, 0, .2, 1);
+    animation-fill-mode: both;
+    mix-blend-mode: plus-lighter;
+  }
+
+  ::view-transition-old(ast-mode) { animation-name: ast-mode-fade-out; }
+  ::view-transition-new(ast-mode) { animation-name: ast-mode-fade-in; }
+  ::view-transition-old(ast-mode-switch) { display: none; }
+  ::view-transition-new(ast-mode-switch) { animation: none; mix-blend-mode: normal; }
+
+  .ast-mode-switch { transition: background-color 380ms ease, border-color 380ms ease, box-shadow 380ms ease; }
+  .ast-mode-switch::before {
+    transition: translate 380ms var(--ast-interaction-ease), background-color 380ms ease, border-color 380ms ease, box-shadow 380ms ease;
+  }
+  .ast-mode-switch button { transition: color 340ms ease, background-color 180ms ease, font-weight 340ms ease; }
+
+  .ast-chat-pane .chat-composer { transition: border-color 180ms, box-shadow 180ms; }
+
+  .ast-chat-pane .chat-turn[data-new-turn] .chat-results li {
+    animation: ast-message-in 460ms var(--ast-interaction-ease);
+  }
+
+  .ast-chat-pane .chat-loading-orbs img { animation: ast-chat-wait 1.1s ease-in-out infinite; }
+  .ast-chat-pane .chat-loading-orbs img + img { animation-delay: 140ms; }
+
+  .ast-chat-pane .chat-reference-picker { animation: ast-reference-in 420ms var(--ast-interaction-ease); }
+}
+
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+  .ast-navigation button, .ast-chat-pane .chat-followups button {
+    transition: background-color 180ms, color 180ms, translate 180ms var(--ast-interaction-ease);
+  }
+
+  .ast-navigation button:hover:not(:disabled), .ast-chat-pane .chat-followups button:hover:not(:disabled) {
+    translate: 2px 0;
+  }
+
+  .ast-main :is(.sketch-deadline, .sketch-next, .course) {
+    transition: background-color 180ms, border-color 180ms, translate 220ms var(--ast-interaction-ease);
+  }
+
+  .ast-main :is(.sketch-deadline, .sketch-next, .course):hover { translate: 0 -2px; }
+
+  .ast-chat-pane .chat-send[type="submit"] {
+    transition: opacity 180ms, scale 180ms var(--ast-interaction-ease);
+  }
+
+  .ast-chat-pane .chat-send[type="submit"]:hover:not(:disabled) { scale: 1.07; }
+}
+
+@keyframes ast-screen-out {
+  to { opacity: 0; transform: translate3d(-10px, 0, 0) scale(.996); }
+}
+
+@keyframes ast-screen-in {
+  from { opacity: 0; transform: translate3d(16px, 0, 0) scale(.996); }
+}
+
+@keyframes ast-mode-fade-out { to { opacity: 0; } }
+@keyframes ast-mode-fade-in { from { opacity: 0; } }
+
+@keyframes ast-message-in {
+  from { opacity: 0; transform: translateY(9px) scale(.985); }
+}
+
+@keyframes ast-chat-wait {
+  0%, 60%, 100% { translate: 0 0; }
+  30% { translate: 0 -4px; }
+}
+
+@keyframes ast-reference-in {
+  from { opacity: 0; transform: translateY(10px) scale(.98); }
+}

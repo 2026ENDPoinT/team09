@@ -1,0 +1,110 @@
+.timetable-screen[data-layout="focus"] {
+  --timetable-ink: #f8eef1;
+  --timetable-muted: #c4b5bf;
+  --timetable-accent: #eac4cb;
+  --timetable-deadline-ink: #ffc0bb;
+  --timetable-deadline-fill: #512d39;
+  --timetable-control-line: #59424f;
+  --timetable-focus-surface: #2a222c;
+  --timetable-focus-selected: #4a303d;
+  --timetable-focus-selected-line: #895d6c;
+  padding-block-end: 0;
+
+  .timetable-title p, .notice-inline-error { color: #f5b6ac; }
+  .empty, .timetable-summary .timetable-deadline { background: #2d222c; border-color: var(--timetable-control-line); }
+  .empty :is(p, .button) { color: var(--timetable-ink); }
+  .empty .button:hover:not(:disabled) { background: var(--timetable-focus-selected); }
+
+  :is(.timetable-navigation button, .timetable-refresh, .timetable-views, .timetable-filters) {
+    background: var(--timetable-focus-surface);
+  }
+  :is(.timetable-navigation button, .timetable-refresh):hover:not(:disabled),
+  :is(.timetable-views, .timetable-filters) button[aria-pressed="false"]:hover {
+    background: #3a2d39;
+  }
+  :is(.timetable-views, .timetable-filters) button[aria-pressed="true"] {
+    background: var(--timetable-focus-selected);
+    color: #ffe3e0;
+  }
+  .timetable-views button[aria-pressed="true"] {
+    box-shadow: inset 0 0 0 1px var(--timetable-focus-selected-line);
+  }
+  .timetable-filters button:last-child[aria-pressed="true"] {
+    background: var(--timetable-deadline-fill);
+    color: var(--timetable-deadline-ink);
+  }
+
+  .timetable-summary .timetable-deadline:hover {
+    background: #3a2b37;
+    border-color: var(--timetable-focus-selected-line);
+  }
+
+  .timetable-scroll {
+    --timetable-ink: #2c2029;
+    --timetable-muted: #62535f;
+    --timetable-accent: #793c4e;
+    --timetable-navy: #773d52;
+    --timetable-today: #f9e5e5;
+    --timetable-weekend: #f8f4f5;
+    --timetable-deadline-ink: #8d3845;
+    --timetable-deadline-fill: #f9dedf;
+    --timetable-line: #e9e0e4;
+    --timetable-control-line: #e1d5da;
+    --timetable-board: #fefbfa;
+    --timetable-cell: #fffcfb;
+    background: var(--timetable-board);
+    color: var(--timetable-ink);
+    color-scheme: light;
+  }
+  .timetable-axis { background: var(--timetable-board); }
+  .timetable-day .timetable-heading[data-today],
+  .timetable-month-day[data-today] { box-shadow: inset 0 0 0 1px #d59ea6; }
+  :is(.timetable-deadline-label, .timetable-deadline-cell) { background: #f7f1f2; }
+  .timetable-deadline-cell .timetable-deadline { border-color: #e6b4bc; }
+  .timetable-slots, .timetable-month-day { background-color: var(--timetable-cell); }
+  .timetable-day .timetable-slots[data-today] { background-color: #fcf0f0; }
+  .timetable-month-day[data-outside] { background: #f3eff1; color: #746371; }
+  .timetable-month-class time { color: #523f4d; }
+
+  .timetable-class-content time {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .timetable-class--0 { --timetable-card: #e6effa; --timetable-card-line: #c6d8ee; --timetable-card-accent: #315b87; }
+  .timetable-class--1 { --timetable-card: #eaeffa; --timetable-card-line: #cdd2eb; --timetable-card-accent: #474e88; }
+  .timetable-class--2 { --timetable-card: #f7ebd8; --timetable-card-line: #e5d2b3; --timetable-card-accent: #805124; }
+  .timetable-class--3 { --timetable-card: #f1e6ef; --timetable-card-line: #e2ccdd; --timetable-card-accent: #75466f; }
+  .timetable-class--4 { --timetable-card: #e3f0eb; --timetable-card-line: #c8dfd6; --timetable-card-accent: #316650; }
+  .timetable-class--5 { --timetable-card: #eee8f8; --timetable-card-line: #dacfed; --timetable-card-accent: #5f4887; }
+}
+
+.ast-let-him-cook:has(> .ast-mode-switch[data-focus-calendar]) {
+  --ast-mode-width: 314px;
+  --ast-mode-height: 67px;
+}
+
+.ast-let-him-cook > .ast-mode-switch[data-focus-calendar] {
+  --ast-mode-gap: 5px;
+  --ast-mode-inset: 7px;
+  --ast-mode-glass: linear-gradient(180deg, #67616a82, #323039a3 55%, #212026d4);
+  --ast-mode-edge: #97828d;
+  --ast-mode-rim: #ffffff45;
+  --ast-mode-shadow: #100c1145;
+  --ast-mode-lens: linear-gradient(180deg, #77727b91, #544f5a99 55%, #46424cba);
+  --ast-mode-lens-edge: #a496a2;
+  --ast-mode-lens-rim: #ffffff40;
+  --ast-mode-label: #ded3dd;
+  --ast-mode-selected-label: #fff5f7;
+  position: relative;
+  grid-area: 2 / 2;
+  align-self: end;
+  justify-self: center;
+  inset: auto;
+  margin: 0 0 var(--ast-mode-bottom);
+  background: var(--ast-mode-glass);
+}
+
+.ast-mode-switch[data-focus-calendar] button { gap: 8px; font-size: 18px; line-height: 25px; }
+.ast-mode-switch[data-focus-calendar] img { display: block; flex: none; }

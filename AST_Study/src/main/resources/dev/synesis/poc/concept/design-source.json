@@ -1,0 +1,152 @@
+{
+  "fileKey": "JxQyBkrJ6p1HsRsCNTTGU1",
+  "frame": "1:419",
+  "panel": "1:550",
+  "measurements": {
+    "referencePanel": [
+      648,
+      1048
+    ],
+    "outline": 1,
+    "radius": 12,
+    "header": 42,
+    "toolbar": 64,
+    "viewportPadding": 24,
+    "collapsedRow": 56,
+    "rowPaddingX": 16,
+    "iconGap": 12,
+    "sourceBadgeHeight": 24
+  },
+  "colors": {
+    "canvas": "#ffffff",
+    "header": "#f7f9fc",
+    "outline": "#d8e1ee",
+    "accent": "#002860",
+    "badge": "#f5f8fc",
+    "title": "#141414",
+    "muted": "#7a8ca3"
+  },
+  "typography": {
+    "family": "Noto Sans KR",
+    "tracking": 0,
+    "panelTitle": {
+      "weight": 700,
+      "size": 16,
+      "lineHeight": 24
+    },
+    "conceptTitle": {
+      "weight": 500,
+      "size": 16,
+      "lineHeight": 24
+    },
+    "sourceAndHint": {
+      "weight": 400,
+      "size": 12,
+      "lineHeight": 20
+    }
+  },
+  "behavior": "Existing concepts order and integration are unchanged. No classification inference or hierarchy mapping added. Each concept retains its complete existing body and citations; bodies render lazily and are cached. Existing scope/version/generation/menu/navigation callbacks are reused.",
+  "classificationLimitation": "The current concept list renderer has no supplied concept-to-category presentation binding. Category headers and numbering are deferred rather than inferred from titles/pages or summary occurrences.",
+  "icons": [
+    {
+      "file": "dots.png",
+      "sourceNode": "I1:551;117:1201",
+      "pixels": [
+        48,
+        48
+      ],
+      "slot": [
+        16,
+        16
+      ],
+      "sha256": "7cd73f4f4fd7b0719074611ab70e521baaf6fef66832aae698de0745f21c7182"
+    },
+    {
+      "file": "search.png",
+      "sourceNode": "I1:553;117:1209",
+      "pixels": [
+        48,
+        48
+      ],
+      "slot": [
+        16,
+        16
+      ],
+      "sha256": "64cd255b25aedfeb53d6dd230ea8e351fddc6333c51e3025695a1971a58b3e4f"
+    },
+    {
+      "file": "plus.png",
+      "sourceNode": "I1:560;117:1216",
+      "pixels": [
+        48,
+        48
+      ],
+      "slot": [
+        16,
+        16
+      ],
+      "sha256": "793a1b619a9b6577ca5b10d58ca7a1d57bef544492017a9f3abda3a6918c8cdd"
+    },
+    {
+      "file": "expanded-minus.png",
+      "sourceNode": "1:414",
+      "pixels": [
+        48,
+        48
+      ],
+      "slot": [
+        16,
+        16
+      ],
+      "sha256": "7e64cf1584ea01f318bbedcf689ae92c92e704669002c85a2688ec41b8b0bb28"
+    },
+    {
+      "file": "source-arrow.png",
+      "sourceNode": "1:932",
+      "pixels": [
+        48,
+        48
+      ],
+      "slot": [
+        16,
+        16
+      ],
+      "sha256": "bd3de9deaef7db5c327e9f2070c4cae31b79f7f4bc1bc71c1db795935bba8acb"
+    }
+  ],
+  "expandedArticle": {
+    "figmaFrame": "1:769",
+    "articleNode": "1:908",
+    "radius": 8,
+    "outline": 1,
+    "shadow": null,
+    "bodyPadding": [
+      16,
+      20,
+      16,
+      20
+    ],
+    "gapBelow": 12,
+    "actions": {
+      "height": 36,
+      "gap": 8,
+      "referenceWidths": [
+        232,
+        144,
+        168
+      ],
+      "narrow": "wrap intact controls; source width adapts to the remaining space"
+    },
+    "preservedUserColors": {
+      "headingBackground": "#f9fcff",
+      "groupTitle": "#607795"
+    },
+    "title": {
+      "font": "Noto Sans KR Medium",
+      "size": 16,
+      "weight": 500,
+      "lineHeight": 24,
+      "reason": "User requested a slightly heavier title without full Bold; render with bundled face instead of BasicHTML fallback."
+    }
+  }
+}

@@ -1,0 +1,165 @@
+.ast-entry-shell {
+  position: relative;
+  height: 100%;
+  isolation: isolate;
+  overflow: clip;
+  background: #191d1d;
+}
+
+.ast-entry-shell[data-entry="welcome"] > .ast-workspace {
+  visibility: hidden;
+}
+
+.ast-entry-shell[data-entry="entering"] .ast-wordmark-art.ast-header-mark {
+  visibility: hidden;
+}
+
+.ast-entry-shell[data-entry="entering"] .astra-welcome-mark { animation: ast-entry-ink .94s linear both; }
+
+.astra-welcome {
+  --wordmark-height: clamp(83px, 14vh, 132px);
+  --welcome-gap: clamp(13px, 2.2vh, 22px);
+  --setup-top: clamp(46px, 9.5vh, 88px);
+  --setup-gap: clamp(25px, 4vh, 40px);
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  overflow: clip;
+  color: #182820;
+  font-family: "Noto Sans KR", -apple-system, "Apple SD Gothic Neo", sans-serif;
+}
+
+.astra-welcome--titlebar { app-region: drag; user-select: none; }
+.astra-welcome--busy { --wordmark-frame-time: .3s; }
+
+.astra-welcome-landscape {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(0deg, #f7f5ecc7, transparent 15%),
+    url("./assets/login/welcome-hills.jpg") center / cover no-repeat #f6f3ed;
+}
+
+.astra-welcome-center {
+  position: absolute;
+  top: 37%;
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  gap: var(--welcome-gap);
+  width: min(430px, calc(100% - 120px));
+  transform: translate(-50%, calc(-.5 * var(--wordmark-height)));
+  transition: top .64s cubic-bezier(.22,.7,.2,1);
+}
+
+.astra-welcome--setup .astra-welcome-center {
+  top: calc(var(--setup-top) + .5 * var(--wordmark-height));
+  gap: var(--setup-gap);
+  width: min(680px, calc(100% - 48px));
+}
+
+.astra-welcome-mark { display: block; transform-origin: top left; }
+.astra-welcome-mark > .ast-wordmark-art { display: block; }
+
+.astra-welcome-action {
+  position: relative;
+  display: grid;
+  width: 100%;
+  justify-items: center;
+}
+
+.astra-setup-surface {
+  position: relative;
+  app-region: no-drag;
+  user-select: text;
+  width: 100%;
+  height: min(475px, calc(100vh - var(--setup-top) - var(--wordmark-height) - var(--setup-gap) - 22px));
+  border: 1px solid #d8d9dd;
+  border-radius: 25px;
+  background: #fff;
+  box-shadow: 0 16px 45px #17212b24, 0 3px 9px #17212b15;
+}
+.astra-setup-button-echo { display: none; }
+
+.astra-login-button {
+  app-region: no-drag;
+  display: inline-flex;
+  min-width: 212px;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  border: 1px solid #b7c0b9;
+  border-radius: 100px;
+  padding: 8px 21px;
+  background: #fff;
+  box-shadow: 0 3px 9px #1f322119;
+  color: #233128;
+  font-size: 14px;
+  font-weight: 620;
+  cursor: pointer;
+  transition: background-color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease;
+}
+
+.astra-login-button img { flex: none; object-fit: contain; }
+.astra-login-button:hover:not(:disabled) { background: #f8fbf4; border-color: #748b79; box-shadow: 0 5px 15px #1f32212b; transform: translateY(-1px); }
+.astra-login-button:active:not(:disabled) { transform: translateY(0); }
+.astra-login-button:focus-visible { outline-color: #41654a; }
+.astra-login-button:disabled { cursor: wait; color: #43584b; background: #f5f8f1; }
+.astra-welcome-status {
+  position: absolute;
+  top: calc(100% + 10px);
+  width: max-content;
+  max-width: min(34em, 100%);
+  color: #364539;
+  font-size: 12px;
+  line-height: 1.55;
+  text-align: center;
+  text-wrap: balance;
+}
+.astra-welcome-status:empty { display: none; }
+.astra-welcome-status[data-error="true"] { color: #8b3732; }
+
+.astra-welcome--entering { pointer-events: none; app-region: no-drag; }
+.astra-welcome--entering .astra-welcome-action { animation: ast-entry-fade .23s ease both; }
+.astra-welcome--entering .astra-welcome-landscape { animation: ast-entry-landscape .61s .13s cubic-bezier(.2,.65,.25,1) both; }
+.ast-entry-shell[data-entry="entering"] .ast-chrome { animation: ast-entry-reveal .51s .29s cubic-bezier(.18,.7,.2,1) both; }
+.ast-entry-shell[data-entry="entering"] .ast-navigation { animation: ast-entry-reveal .55s .37s cubic-bezier(.18,.7,.2,1) both; }
+.ast-entry-shell[data-entry="entering"] .ast-main { animation: ast-entry-reveal .59s .39s cubic-bezier(.18,.7,.2,1) both; }
+.ast-entry-shell[data-entry="entering"] .ast-chat-pane { animation: ast-entry-reveal .54s .47s cubic-bezier(.18,.7,.2,1) both; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .astra-welcome:not(.astra-welcome--entering, .astra-welcome--setup) .astra-welcome-center { animation: ast-welcome-arrive .65s cubic-bezier(.2,.75,.24,1) both; }
+  .astra-welcome--setup:not(.astra-welcome--entering) .astra-setup-surface { animation: ast-setup-expand .64s cubic-bezier(.22,.7,.2,1) both; }
+  .astra-welcome--setup:not(.astra-welcome--entering) .student-setup { animation: ast-entry-reveal .32s .25s ease both; }
+  .astra-setup-button-echo {
+    position: absolute;
+    inset: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    height: 50px;
+    font-size: 14px;
+    font-weight: 620;
+    pointer-events: none;
+    animation: ast-entry-fade .19s ease both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .astra-welcome *, .ast-entry-shell[data-entry="entering"] :is(.ast-chrome, .ast-navigation, .ast-main, .ast-chat-pane) { animation: none; transition: none; }
+}
+
+@keyframes ast-welcome-arrive { from { opacity: 0; translate: 0 8px; } to { opacity: 1; translate: 0 0; } }
+@keyframes ast-setup-expand {
+  from {
+    clip-path: inset(0 calc(50% - 106px) calc(100% - 50px) round 25px);
+    background-color: #f5f8f1;
+  }
+  to { clip-path: inset(-60px round 24px); }
+}
+@keyframes ast-entry-fade { to { opacity: 0; translate: 0 -7px; } }
+@keyframes ast-entry-landscape { to { opacity: 0; transform: scale(1.025); } }
+@keyframes ast-entry-ink { 0%, 45% { color: #182820; } 76%, 100% { color: #1c1c1c; } }
+@keyframes ast-entry-reveal { from { opacity: 0; translate: 0 13px; } to { opacity: 1; translate: 0 0; } }

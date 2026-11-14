@@ -1,0 +1,325 @@
+.ast-let-him-cook[data-mode="focus"] .ast-navigation { padding: 26px 14px; }
+.focus-navigation { display: grid; gap: 5px; }
+.focus-navigation p { padding: 0 10px 14px; color: #b7a9b0; font-size: 12px; font-weight: 650; }
+.focus-navigation button {
+  min-height: 42px;
+  padding: 9px 10px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  background: transparent;
+  color: #e6dee3;
+  font-size: 14px;
+  text-align: start;
+  cursor: pointer;
+}
+.focus-navigation button:hover { background: #ffffff0c; }
+.focus-navigation button[aria-current] {
+  border-color: #70505f;
+  background: #3b2933;
+  color: #fff4f8;
+  font-weight: 700;
+  box-shadow: inset 3px 0 #e4a39d;
+}
+
+.focus-home, .focus-files, .focus-dialog {
+  --study-ink: #f8eff0;
+  --study-muted: #d5c4cb;
+  --study-line: #775963;
+  --study-surface: #241d24;
+  --study-accent: #f3c2b4;
+  min-width: 0;
+  color: var(--study-ink);
+  font-size: 14px;
+}
+.ast-let-him-cook[data-mode="focus"] > .ast-main:has(> main > .focus-home, > main > .ast-timetable-screen:not([hidden])) {
+  border-color: #4e3541b0;
+  background: linear-gradient(180deg, #16131a 0%, #221720 32%, #3d1d27 58%, #702a34 82%, #291a23 100%);
+}
+.ast-let-him-cook[data-mode="focus"] > .ast-main > main:has(> .focus-home) {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding-block-start: clamp(30px, 4.5vh, 48px);
+  padding-block-end: 0;
+  padding-inline: clamp(22px, calc(13.6vw - 180px), 64px);
+}
+.ast-let-him-cook[data-mode="focus"] > .ast-main > main:has(> .focus-home) > .ast-resource-error { order: -1; }
+.focus-home {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
+  container-type: inline-size;
+}
+.focus-home-intro { min-height: 100px; margin-bottom: 20px; }
+.focus-home-intro p { color: #e3cad1; font-size: 16px; font-weight: 500; line-height: 23px; }
+.focus-home-intro h1 { margin: 5px 0 0; font-size: clamp(30px, 6.2cqi, 50px); font-weight: 700; line-height: 1.24; letter-spacing: -.03em; }
+.focus-study-list { display: grid; gap: 8px; margin-bottom: 20px; }
+.focus-study {
+  --task-tone: #f2bdb3;
+  --task-surface: #37272b;
+  --task-line: #73505a;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(168px, 22.5%);
+  align-items: center;
+  gap: 12px;
+}
+.focus-study[data-task="explain"] { --task-tone: #ddc9f0; --task-surface: #35283b; --task-line: #66516f; }
+.focus-study[data-task="practice"] { --task-tone: #f3d3a0; --task-surface: #382c29; --task-line: #715544; }
+.focus-study-info {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-height: 88px;
+  padding: 11px 16px;
+  border: 1px solid #543a47;
+  border-radius: 12px;
+  background: #261c25;
+}
+.focus-study-icon {
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--task-line);
+  border-radius: 10px;
+  background: var(--task-surface);
+}
+.focus-study h2 { margin-block: 1px; font-size: 19px; line-height: 25px; word-break: keep-all; }
+.focus-study p { color: #d2c1c8; font-size: 12px; font-weight: 500; line-height: 17px; }
+.focus-study .focus-study-label { color: var(--task-tone); font-size: 11px; font-weight: 700; line-height: 16px; }
+.focus-study button, .focus-files button, .focus-dialog button {
+  min-height: 36px;
+  padding: 7px 12px;
+  border: 1px solid var(--study-line);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--study-ink);
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+}
+.focus-study button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  min-height: 50px;
+  padding: 8px 10px;
+  border-color: var(--task-line);
+  border-radius: 10px;
+  background: var(--task-surface);
+  color: var(--task-tone);
+  font-size: 12px;
+  font-weight: 700;
+}
+.focus-study img { flex: none; }
+.focus-study button:hover { background: color-mix(in srgb, var(--task-surface) 85%, var(--task-tone)); }
+.focus-files button:hover:not(:disabled), .focus-dialog button:hover:not(:disabled) { background: #ffffff11; }
+.focus-files button:disabled, .focus-dialog button:disabled { opacity: .55; cursor: default; }
+.focus-feedback { margin-block: 10px; color: #ffd6bd; }
+
+.focus-files-heading, .focus-file-toolbar, .focus-file-location, .focus-file-actions, .focus-file-view, .focus-file-toolbar [role="group"] {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.focus-files-heading, .focus-file-location { justify-content: space-between; }
+.focus-files-heading h1 { margin: 0 0 5px; font-size: 32px; }
+.focus-files-heading p { color: var(--study-muted); }
+.focus-files .focus-primary, .focus-dialog .focus-primary { border-color: #e7ad9f; background: var(--study-accent); color: #392225; }
+.focus-files .focus-primary:hover:not(:disabled), .focus-dialog .focus-primary:hover:not(:disabled) { background: #ffdbcf; }
+.focus-file-toolbar { margin-block: 24px 14px; }
+.focus-file-toolbar input, .focus-file-form :is(input, select) {
+  min-width: 0;
+  min-height: 38px;
+  padding: 8px 11px;
+  border: 1px solid var(--study-line);
+  border-radius: 7px;
+  background: #17141a;
+  color: var(--study-ink);
+  font: inherit;
+}
+.focus-file-search { display: flex; flex: 1 1 180px; min-width: 0; }
+.focus-file-search input { width: 100%; }
+.focus-file-toolbar input::placeholder { color: #c0afb9; }
+.focus-file-toolbar button[aria-pressed="true"], .focus-file-view button[aria-pressed="true"] { background: #59404e; border-color: #a07b87; }
+.focus-file-location { padding-block: 7px 12px; border-bottom: 1px solid #694b5b; }
+.focus-file-path, .focus-file-path > span { display: flex; align-items: center; flex-wrap: wrap; gap: 4px; min-width: 0; }
+.focus-file-path button, .focus-file-view button { min-height: 30px; padding: 4px 8px; }
+.focus-file-path button { border-color: transparent; color: var(--study-muted); overflow-wrap: anywhere; }
+.focus-file-path button[aria-current] { color: var(--study-ink); }
+.focus-file-view > span { margin-inline-end: 4px; color: var(--study-muted); font-size: 12px; }
+.focus-file-empty { display: grid; justify-items: center; align-content: center; gap: 12px; min-height: 270px; color: var(--study-muted); text-align: center; }
+.focus-file-empty .focus-folder-art { opacity: .7; }
+.focus-file-shelf { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 155px), 1fr)); gap: 10px; margin: 16px 0 0; padding: 0; list-style: none; }
+.focus-file-item { position: relative; min-width: 0; }
+.focus-files .focus-file-open {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 4px;
+  width: 100%;
+  height: 100%;
+  min-height: 155px;
+  padding: 12px 10px;
+  border-color: transparent;
+  overflow-wrap: anywhere;
+}
+.focus-file-name { font-size: 14px; }
+.focus-file-meta, .focus-file-date { color: var(--study-muted); font-size: 11px; font-weight: 400; }
+.focus-file-menu { position: absolute; top: 5px; right: 5px; }
+.focus-file-menu[open] { z-index: 1; }
+.focus-file-menu summary { display: grid; place-items: center; width: 29px; height: 29px; border: 1px solid #715462; border-radius: 6px; background: #302631; cursor: pointer; list-style: none; }
+.focus-file-menu summary::-webkit-details-marker { display: none; }
+.focus-file-menu div { position: absolute; right: 0; display: grid; min-width: max-content; padding: 4px; border: 1px solid #715462; border-radius: 8px; background: #302631; }
+.focus-file-menu div button { border-color: transparent; text-align: start; }
+.focus-file-shelf[data-view="list"] { grid-template-columns: minmax(0, 1fr); gap: 3px; }
+.focus-file-shelf[data-view="list"] .focus-file-open {
+  grid-template-columns: 46px minmax(0, 1fr);
+  justify-items: start;
+  align-items: center;
+  min-height: 58px;
+  padding: 8px 36px 8px 10px;
+  text-align: start;
+}
+.focus-file-shelf[data-view="list"] :is(.focus-folder-art, .focus-pdf-art) { grid-row: span 3; width: 38px; height: 32px; font-size: 9px; }
+.focus-file-shelf[data-view="list"] .focus-file-menu { top: 50%; translate: 0 -50%; }
+
+.focus-folder-art { --folder-tone: #ad83b4; position: relative; display: block; width: 100px; height: 76px; }
+.focus-folder-art[data-tone="sand"] { --folder-tone: #c69e6d; }
+.focus-folder-art[data-tone="blue"] { --folder-tone: #7c9bb8; }
+.focus-folder-art[data-tone="leaf"] { --folder-tone: #86a995; }
+.focus-folder-art[data-tone="rose"] { --folder-tone: #bc8191; }
+.focus-folder-back { position: absolute; inset: 8% 1% 8%; border-radius: 8px; background: color-mix(in srgb, var(--folder-tone) 67%, #2f2430); clip-path: polygon(0 0, 32% 0, 44% 15%, 100% 15%, 100% 100%, 0 100%); }
+.focus-folder-paper { position: absolute; inset: 28% 8% 11%; border-radius: 4px; background: #f7e9de; rotate: -4deg; }
+.focus-folder-front { position: absolute; inset: 34% 1% 5%; border: 1px solid #ffffff33; border-radius: 8px; background: linear-gradient(160deg, var(--folder-tone), color-mix(in srgb, var(--folder-tone) 78%, #44303e)); box-shadow: 0 4px 8px #0d09104d; }
+.focus-pdf-art { display: grid; place-items: end start; width: 54px; height: 70px; margin-block: 3px; padding: 5px; border-radius: 4px 12px 4px 4px; background: #e7ced3; color: #703745; font-size: 11px; font-weight: 800; }
+
+.focus-dialog { width: min(440px, calc(100vw - 36px)); padding: 22px; border: 1px solid var(--study-line); border-radius: 13px; background: var(--study-surface); color-scheme: dark; }
+.focus-dialog::backdrop { background: #171017aa; }
+.focus-dialog header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.focus-dialog header h2 { font-size: 19px; }
+.focus-dialog header button { font-size: 17px; }
+.focus-dialog p { color: var(--study-muted); }
+.focus-dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 16px; }
+.focus-dialog:has(.focus-study-guide) { width: min(480px, calc(100vw - 36px)); }
+.focus-study-guide { display: grid; gap: 12px; line-height: 1.55; word-break: keep-all; }
+.focus-study-guide strong { color: var(--study-ink); }
+.focus-study-guide dl { margin: 0; }
+.focus-study-guide dl > div { display: grid; gap: 2px; padding-block: 9px; border-top: 1px solid #59424d; }
+.focus-study-guide dt { font-weight: 700; }
+.focus-study-guide dd { margin: 0; color: var(--study-muted); font-size: 13px; }
+.focus-file-form label { display: grid; gap: 7px; }
+
+@container (max-width: 540px) {
+  .focus-home-intro { min-height: auto; margin-bottom: 20px; }
+  .focus-study { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .focus-study button { justify-self: end; min-height: 38px; }
+}
+
+.ast-let-him-cook[data-mode="focus"] > .ast-main:has(> main > .focus-files) {
+  background: #211b22;
+}
+
+.focus-files[data-embedded] {
+  flex: 1 0 auto;
+  min-height: 737px;
+  padding: 19px clamp(12px, 2cqi, 21px) var(--ast-mode-clearance, 17px);
+  border: 1px solid #5b3c48;
+  border-block-end: 0;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(180deg, #241c25fc, #241b23fa 64%, #2c1d26f7);
+}
+.focus-files[data-embedded] .focus-files-heading h2 { color: #f8eff1; font-size: 26px; line-height: 33px; }
+.focus-files[data-embedded] .focus-files-heading p { margin-top: 2px; color: #d2c1c8; font-size: 12px; line-height: 17px; }
+.focus-files[data-embedded] .focus-file-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-width: 120px;
+  min-height: 35px;
+  font-size: 12px;
+}
+.focus-files[data-embedded] .focus-file-actions button:not(.focus-primary) { border-color: #674653; color: #e3cad1; }
+.focus-files[data-embedded] .focus-primary { border-color: #f0c2b8; background: #f0c2b8; }
+.focus-files[data-embedded] .focus-primary:hover:not(:disabled) { background: #ffdbcf; }
+.focus-files[data-embedded] .focus-file-toolbar { margin-block: 12px; gap: 9px; }
+.focus-files[data-embedded] .focus-file-search {
+  align-items: center;
+  gap: 9px;
+  min-height: 40px;
+  padding-inline: 12px;
+  border: 1px solid #503a46;
+  border-radius: 8px;
+  background: #211b22;
+}
+.focus-files[data-embedded] .focus-file-search:focus-within { border-color: #ba8e9a; }
+.focus-files[data-embedded] .focus-file-search input { min-height: 38px; padding: 0; border: 0; outline: 0; background: transparent; font-size: 13px; }
+.focus-files[data-embedded] .focus-file-toolbar button { min-height: 40px; padding-inline: 14px; border-color: #503a46; background: #2b222b; color: #d2c1c8; font-size: 12px; }
+.focus-files[data-embedded] .focus-file-toolbar [role="group"] { gap: 9px; }
+.focus-files[data-embedded] .focus-file-toolbar [role="group"] button:first-child { min-width: 101px; }
+.focus-files[data-embedded] .focus-file-toolbar [role="group"] button:last-child { min-width: 76px; }
+.focus-files[data-embedded] .focus-file-toolbar > button { min-width: 112px; }
+.focus-files[data-embedded] .focus-file-toolbar button[aria-pressed="true"] { border-color: #735261; background: #47313e; color: #f8eff1; }
+.focus-files[data-embedded] .focus-file-toolbar button:hover:not(:disabled) { background: #47313e; }
+.focus-files[data-embedded] .focus-file-location { min-height: 38px; padding: 0; border: 0; }
+.focus-files[data-embedded] .focus-file-path { gap: 10px; }
+.focus-files[data-embedded] .focus-file-path strong { font-size: 17px; line-height: 24px; }
+.focus-files[data-embedded] .focus-file-path button { display: flex; align-items: center; gap: 7px; padding: 3px; font-size: 12px; }
+.focus-file-view-buttons { display: flex; gap: 5px; }
+.focus-files[data-embedded] .focus-file-view-buttons { gap: 3px; padding: 3px; border: 1px solid #503a46; border-radius: 8px; background: #261f27; }
+.focus-files[data-embedded] .focus-file-view-buttons button {
+  display: grid;
+  place-items: center;
+  width: 33px;
+  min-height: 27px;
+  padding: 0;
+  border: 0;
+  border-radius: 5px;
+}
+.focus-files[data-embedded] .focus-file-view-buttons button[aria-pressed="true"] { background: #463441; }
+.focus-bulk-actions { display: flex; align-items: center; gap: 10px; margin-top: 10px; color: #e3cad1; font-size: 12px; }
+.focus-files[data-embedded] .focus-file-shelf { grid-template-columns: repeat(auto-fill, minmax(min(100%, 174px), 1fr)); gap: 12px; margin-top: 12px; }
+.focus-files[data-embedded] .focus-file-item { border: 1px solid #513b4b; border-radius: 11px; background: #2c232d; }
+.focus-files[data-embedded] .focus-file-item[data-selected] { border-color: #edbcb5; background: #47313e; }
+.focus-files[data-embedded] .focus-file-open { justify-items: stretch; min-height: 176px; padding: 8px 10px 6px; border: 0; text-align: start; }
+.focus-files[data-embedded] .focus-file-name { padding-inline-end: 27px; color: #f8eff1; font-size: 15px; font-weight: 700; line-height: 21px; }
+.focus-files[data-embedded] .focus-file-meta { color: #d2c1c8; font-weight: 500; }
+.focus-files[data-embedded] .focus-file-date { color: #b6a5b0; }
+.focus-files[data-embedded] .focus-file-menu { top: 108px; right: 10px; }
+.focus-files[data-embedded] .focus-file-menu summary { width: 24px; height: 24px; border-color: #563f4d; background: #352b35; }
+.focus-file-thumb { display: grid; place-items: center; min-height: 96px; border-radius: 7px; background: #35242e; }
+.focus-file-thumb[data-tone="blue"] { background: #2b2c3a; }
+.focus-file-thumb[data-tone="slate"] { background: #2b292e; }
+.focus-file-thumb[data-tone="leaf"] { background: #263332; }
+.focus-file-thumb[data-tone="gold"] { background: #382c29; }
+.focus-files[data-embedded] .focus-file-shelf[data-view="list"] { grid-template-columns: minmax(0, 1fr); gap: 5px; }
+.focus-files[data-embedded] .focus-file-shelf[data-view="list"] .focus-file-open {
+  grid-template-columns: minmax(96px, auto) minmax(0, 1fr);
+  justify-items: start;
+  min-height: 84px;
+  padding-inline-end: 38px;
+}
+.focus-files[data-embedded] .focus-file-shelf[data-view="list"] .focus-file-thumb { grid-row: span 3; width: 96px; min-height: 70px; }
+.focus-files[data-embedded] .focus-file-shelf[data-view="list"] .focus-file-menu { top: 50%; }
+
+.focus-lectures { width: min(100%, 1010px); margin-inline: auto; padding: 12px 0 32px; color: #f8eff0; }
+.focus-lectures > header { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 22px; }
+.focus-lectures h1 { margin: 0; font-size: clamp(25px, 3vw, 36px); line-height: 1.25; }
+.focus-lectures-reload, .focus-lecture-list button { border: 1px solid #654957; background: #2c222c; color: inherit; cursor: pointer; }
+.focus-lectures-reload { border-radius: 7px; padding: 7px 12px; min-height: 36px; font-size: 13px; }
+.focus-lectures-reload:hover, .focus-lecture-list button:hover { border-color: #a97180; background: #3b2b38; }
+.focus-lectures-empty { border: 1px solid #543d4b; border-radius: 12px; background: #251e27; padding: 24px; color: #d5c4cb; }
+.focus-lecture-list { display: grid; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.focus-lecture-list button { display: flex; justify-content: space-between; align-items: center; width: 100%; gap: 16px; border-radius: 11px; padding: 15px 17px; text-align: start; }
+.focus-lecture-info { display: grid; gap: 5px; min-width: 0; }
+.focus-lecture-info strong { font-size: 16px; line-height: 1.45; overflow-wrap: anywhere; }
+.focus-lecture-info > span { color: #d5c4cb; font-size: 13px; }
+.focus-lecture-list button > span:last-child { color: #f2bdb3; flex: none; }
+.focus-lecture-error { margin: 0 0 14px; color: #ffc6b8; }

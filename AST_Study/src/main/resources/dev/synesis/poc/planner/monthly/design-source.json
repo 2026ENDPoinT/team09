@@ -1,0 +1,120 @@
+{
+  "fileKey": "rXyo0q7de1KhW5adriY7YU",
+  "frame": "Monthly Planner · 2026년 11월",
+  "nodeId": "2:26",
+  "mainNodeId": "2:99",
+  "referenceMainSize": [
+    1550,
+    1016
+  ],
+  "calendarNodeId": "3:214",
+  "calendarSize": [
+    1178,
+    664
+  ],
+  "sidebarWidth": 296,
+  "layoutPadding": 28,
+  "columnGap": 20,
+  "cardGap": 16,
+  "quickNote": "design-only preview; no edit or persistence",
+  "monthlyTodo": "separate monthlyTasks collection; shares todoTags with weekly TODOs",
+  "upcoming": "important events only, ordered by occurrence start, next 366 days",
+  "assets": [
+    {
+      "file": "add.png",
+      "source": "add.svg",
+      "logicalWidth": "16",
+      "logicalHeight": "16",
+      "rasterScale": 3,
+      "sha256": "ffd175b3835b146e1cb530f7d559fae22b76eab5e8d061ab04a16170aa6ac853"
+    },
+    {
+      "file": "arrow.png",
+      "source": "arrow.svg",
+      "logicalWidth": "14",
+      "logicalHeight": "14",
+      "rasterScale": 3,
+      "sha256": "2ef2e215bc4b286f4d45143b3fc8b35de312ac1db025abc3f2bfd13e139d1e62"
+    },
+    {
+      "file": "bell.png",
+      "source": "bell.svg",
+      "logicalWidth": "20",
+      "logicalHeight": "20",
+      "rasterScale": 3,
+      "sha256": "1acedabad010bd3cb6c155d66ad56382690601ed4e50feb30ebe4cd35dad8596"
+    },
+    {
+      "file": "completed-check.png",
+      "source": "completed-check.svg",
+      "logicalWidth": "10",
+      "logicalHeight": "10",
+      "rasterScale": 3,
+      "sha256": "6b013a16175bb050202d2f20ba471324c34b338ef0679a076f38208f203197df"
+    },
+    {
+      "file": "daily-left.png",
+      "source": "daily-left.svg",
+      "logicalWidth": "12",
+      "logicalHeight": "12",
+      "rasterScale": 3,
+      "sha256": "d1d5fc7b28544bd37d5bdaa392ec685d89a5382cb167e5b9250b6d76239568d5"
+    },
+    {
+      "file": "daily-right.png",
+      "source": "daily-right.svg",
+      "logicalWidth": "12",
+      "logicalHeight": "12",
+      "rasterScale": 3,
+      "sha256": "fffa34e2de63734b8caecaec75bf4b4c4e873f08df6f5b76e4a9db7596e5b11a"
+    },
+    {
+      "file": "left.png",
+      "source": "left.svg",
+      "logicalWidth": "15",
+      "logicalHeight": "15",
+      "rasterScale": 3,
+      "sha256": "cb442578a2daaeac4328b0f9fbd835c04f544ffa9952fdea367b0252e2efe2b8"
+    },
+    {
+      "file": "list-selected.png",
+      "source": "list-selected.svg",
+      "logicalWidth": "12",
+      "logicalHeight": "12",
+      "rasterScale": 3,
+      "sha256": "efbb472c2aeab815869adbe9d3dd9155e46e38764c53234702bdc8c928f37a72"
+    },
+    {
+      "file": "list.png",
+      "source": "list.svg",
+      "logicalWidth": "12",
+      "logicalHeight": "12",
+      "rasterScale": 3,
+      "sha256": "f3acf0f3005d96e829db10340915a6b768262af54f75474b054d778fd8c71572"
+    },
+    {
+      "file": "more.png",
+      "source": "more.svg",
+      "logicalWidth": "16",
+      "logicalHeight": "16",
+      "rasterScale": 3,
+      "sha256": "39ec6eee3dccdbaec2ee8be4ccd2da861a69553ab91f8ec322e73652d6659eae"
+    },
+    {
+      "file": "plus.png",
+      "source": "plus.svg",
+      "logicalWidth": "16",
+      "logicalHeight": "16",
+      "rasterScale": 3,
+      "sha256": "5538c057ce1590bba3b0ea0497aad0d86f4c50d8dd769570ff8fc1104ef566c9"
+    },
+    {
+      "file": "right.png",
+      "source": "right.svg",
+      "logicalWidth": "15",
+      "logicalHeight": "15",
+      "rasterScale": 3,
+      "sha256": "3345483e650eff3b7f267a4c57d206d29640a7779c72f59eeffec6125e86698a"
+    }
+  ]
+}
