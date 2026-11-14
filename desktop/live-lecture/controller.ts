@@ -1,9 +1,8 @@
-import { readFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { parseEnv } from "node:util";
 import { BrowserWindow, ipcMain, type IpcMainInvokeEvent } from "electron";
 import type { LectureHistoryResult, LectureRecord, Result } from "../../shared/live-lecture.js";
+import { loadRuntimeEnv } from "../chat-key.js";
 import { readChatSettings } from "../chat-settings.js";
 import { LectureArchive, validLectureId } from "./archive.js";
 import { openLiveLecture } from "./windows.js";
@@ -56,7 +55,7 @@ export function registerLiveLecture({ projectRoot, rendererPath, apiKey, activeD
     try {
       const directory = archiveDirectory();
       const [env, { model }] = await Promise.all([
-        readFile(join(projectRoot, ".env"), "utf8").then(parseEnv, () => ({} as ReturnType<typeof parseEnv>)),
+        loadRuntimeEnv(projectRoot),
         readChatSettings(activeDirectory() ?? null),
       ]);
       if (requestRevision !== revision || owner.isDestroyed()) return { ok: false, message: "강의 해설 열기를 취소했어요." };

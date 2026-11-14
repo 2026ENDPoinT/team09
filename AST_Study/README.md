@@ -16,4 +16,4 @@ python3.12 -m venv .venv-pdf
 
 AST 앱에서는 **집중 모드 → 내 파일**에서 PDF를 열어요. 앱이 루트 `.env`에서 읽은 키를 전달하며 학습 기록은 AST의 계정별 `study/`에 저장돼요. 저장된 해설을 불러오거나 새 PDF의 강의 해설과 개념 정리를 K1.2.5로 생성해요.
 
-학습 창을 변경한 뒤 `./gradlew installDist`로 다시 빌드해요. 숨김 창 검증은 `./gradlew astStudySmokeTest`로 실행해요.
+학습 창을 변경한 뒤 `./gradlew installDist`로 다시 빌드해요.

@@ -7,13 +7,6 @@
   "main": "dist-desktop/desktop/main.js",
   "scripts": {
     "build": "tsc -p tsconfig.desktop.json && tsc --noEmit && vite build",
-    "test:chat": "tsc -p tsconfig.desktop.json && node --test tests/chat-agent.test.mjs tests/chat-class-guidance.test.mjs tests/chat-cost.test.mjs",
-    "test:chat-ui": "npm run build && electron tests/chat-cost-ipc.smoke.mjs --headless",
-    "test:assignment-ui": "npm run build && node --test tests/assignment-browser.test.mjs tests/assignment-analysis.test.mjs && electron tests/assignment-browser-ipc.smoke.mjs --headless",
-    "test:notice-ui": "npm run build && node --test tests/campus-notice-tags.test.mjs tests/campus-notice-index.test.mjs tests/campus-notice-application.test.mjs && electron tests/campus-notices-ipc.smoke.mjs --headless",
-    "test:login-ui": "npm run build && node --test tests/astra-login.test.mjs && electron tests/astra-welcome-ipc.smoke.mjs --headless",
-    "test:data": "tsc -p tsconfig.desktop.json && node --test tests/data-cache.test.mjs tests/screen-data.test.mjs tests/home-sync.test.mjs tests/course-notice-index.test.mjs",
-    "test:live-lecture": "npm run build && node --test tests/live-lecture.test.mjs && electron tests/live-lecture-ipc.smoke.mjs",
     "start": "npm run build && electron ."
   },
   "dependencies": {

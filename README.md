@@ -1,29 +1,20 @@
-# Agent for SeoulTech
-
-ENDPoinT 해커톤 2026 Team 09
+# Agent for SeoulTech 해커톤 제출본
 
 서울과학기술대학교 e-Class의 수강 현황, 학교 공개 공지, 기숙사 식단을 조회하는 macOS 로컬 데스크톱 앱이다. Electron과 React로 화면을 구성하고, Electron이 `src/seoultech_lms`의 앱 전용 Python MCP 서버를 stdio로 실행한다. 조회에는 AI API 키나 별도 백엔드 서버가 필요하지 않다.
 
 ## 실행
 
-macOS에 Node.js 22.12 이상, Python 3.12, JDK 21을 설치한다. 저장소를 한 번 복제하고 아래 명령을 실행하면 AST와 PDF 학습 창을 준비할 수 있다. 첫 설치에는 패키지와 Gradle을 내려받을 인터넷 연결이 필요하다.
+macOS에 Node.js 22.12 이상, Python 3.12, JDK 21을 설치해요. 저장소를 복제한 뒤 아래 명령을 실행해요.
 
 ```sh
 git clone https://github.com/2026ENDPoinT/team09.git
 cd team09
-npm ci
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -e .
-export JAVA_HOME="$(/usr/libexec/java_home -v 21)"
-(cd AST_Study && python3.12 -m venv .venv-pdf && \
-  .venv-pdf/bin/python -m pip install -r requirements-pdf.txt && \
-  ./gradlew installDist)
-npm start
+./run-demo.sh
 ```
 
-첫 실행 때 Electron 실행 파일을 다운로드할 수 있다. 이후 실제 강의실을 조회할 때는 e-Class 연결이 필요하다.
+첫 실행에서 앱 의존성을 설치하고 AST Study를 빌드해요. 설치와 실제 LMS·AI 서비스 이용에는 인터넷 연결이 필요해요. 실제 수강 과목은 서울과기대 e-Class 계정으로 로그인하면 볼 수 있어요.
 
-집중 모드의 **내 파일**에서 PDF를 선택하면 저장소의 `AST_Study/`에서 빌드한 학습 창이 열린다. 학습 기록은 AST의 계정별 `study` 폴더에 저장된다. 저장된 해설은 바로 불러오고, 새 자료의 AI 강의 해설과 개념 정리에는 루트 `.env`의 `OPENAI_API_KEY`가 필요하다. 학습 창만 수정했다면 `AST_Study`에서 `./gradlew installDist`를 다시 실행한다. [AST Study 개발 안내](AST_Study/README.md)
+집중 모드의 **내 파일**에서 PDF를 선택하면 저장소의 `AST_Study/`에서 빌드한 학습 창이 열린다. 학습 기록은 AST의 계정별 `study` 폴더에 저장된다. 저장된 해설은 바로 열 수 있고, 새 PDF는 AI 강의 해설과 개념 정리를 생성할 수 있어요. 학습 창만 수정했다면 `AST_Study`에서 `./gradlew installDist`를 다시 실행한다. [AST Study 개발 안내](AST_Study/README.md)
 
 로그인 창은 Playwright의 Chromium을 먼저 시도하고, 열리지 않으면 설치된 Google Chrome을 사용한다. Chrome 없이 사용하려면 프로젝트 폴더에서 다음 명령으로 Chromium을 설치한다.
 
@@ -34,7 +25,7 @@ PLAYWRIGHT_BROWSERS_PATH="$PWD/.playwright-browsers" .venv/bin/python -m playwri
 1. 시작 화면에서 **ASTRA로 로그인**을 누르고 열린 브라우저의 공식 e-Class 화면에서 직접 로그인한다.
 2. e-Class 메인 화면을 감지하면 로그인 창을 자동으로 닫고, 공식 LMS 응답으로 세션을 검증해 저장한다. 감지가 늦으면 같은 버튼을 눌러 다시 확인할 수 있다. 로그인 창을 먼저 닫았으면 버튼을 눌러 다시 연다.
 3. 로그인 인증 중 AST 손글씨의 전환 간격이 1초에서 0.3초로 빨라지며, 인증이 끝나면 1초 간격으로 돌아온다. 인증할 때 확보한 수강 목록과 로컬 계정 설정으로 홈을 연다. 과목별 활동·출결, 과제·공지, 시간표, 식단, 채팅 기록은 백그라운드에서 불러와 각 영역에 채운다.
-4. 아직 초기 설정을 저장하지 않은 계정은 로그인 버튼이 설정 카드로 펼쳐진다. 선호 언어, 기숙사, 주 소속 학과를 순서대로 선택한다. 설정을 저장하면 홈으로 넘어가며, 같은 계정으로 다시 로그인하면 설정 화면을 건너뛴다.
+4. 아직 초기 설정을 저장하지 않은 계정은 로그인 버튼이 설정 카드로 펼쳐진다. 거주 학사와 주 소속 학과를 선택해요. 설정을 저장하면 홈으로 넘어가며, 같은 계정으로 다시 로그인하면 설정 화면을 건너뛴다.
 
 초기 설정은 e-Class 계정마다 최초 한 번 표시된다. 학과 검색은 [학교 공식 대학소개](https://www.seoultech.ac.kr/univ/univ/intro)와 전공자율선택제 안내를 바탕으로 앱에 포함한 학부·학과 목록을 사용한다. 홈 식단 카드와 기숙사 식단 탭은 저장한 거주 학사의 지정 식당을 기준으로 표시한다. 누리학사는 성림학사 식당, 불암학사는 KB학사 식당을 이용한다. 기숙사에 거주하지 않으면 홈 식단 카드를 숨긴다. [생활관 식당이용안내](https://housing.seoultech.ac.kr/livng/dining)
 
@@ -54,19 +45,11 @@ Electron 앱 데이터 폴더의 `accounts/<계정 키>/`에 초기 설정, 메�
 
 기본 창에는 `letHimCook` 디자인의 반투명 탐색 영역, 학습 현황, 밝은 비서 패널을 배치한다. 상단 사이드바 아이콘으로 탐색 영역을 접거나 다시 열 수 있다. 작은 창에서는 비서 입력창의 가독성을 위해 최소 너비를 유지한다. 화면 탭을 전환해도 대화는 이어진다.
 
-비서를 사용하려면 프로젝트 루트의 `.env`에 `OPENAI_API_KEY`를 설정한 뒤 앱을 다시 실행한다. `.env`가 없으면 같은 폴더의 `.env.example`을 `.env`로 복사하고 값을 채운다.
-
-```dotenv
-OPENAI_API_KEY=여기에_본인_API_키
-```
-
-키는 Electron 메인 프로세스가 시작할 때 읽는다. 채팅 설정에는 키 설정 여부를 표시하며, 모델과 원화 환산 환율을 변경할 수 있다. 기본 모델은 `gpt-6-luna`이다. 이전에 입력한 암호화 키는 비서 호출에 사용하지 않는다. `.env`에 키를 설정하고 재시작하면 앱 설정의 기존 암호화 키를 제거하고 모델과 환율을 유지한다. 질문과 답변에 필요한 MCP 조회 결과는 OpenAI API로 전송되며 API 사용 요금이 발생한다. 시간표·공지·식단 탭은 AI 호출 없이 동작한다.
+채팅 설정에서 모델과 원화 환산 환율을 변경할 수 있어요. 기본 모델은 `gpt-6-luna`예요. 질문과 답변에 필요한 MCP 조회 결과는 OpenAI API로 전송되며 API 사용 요금이 발생한다. 시간표·공지·식단 탭은 AI 호출 없이 동작한다.
 
 각 답변 아래에 해당 질문을 처리한 AI 호출 전체의 원화 예상 비용을 표시한다. 도구 선택을 위한 중간 호출도 합산하며 응답의 실제 토큰 사용량, 캐시 읽기·쓰기, 장문 요금을 반영한다. [OpenAI 공식 요금표](https://developers.openai.com/api/docs/pricing)를 2026-11-12에 확인한 기본 처리 요금을 사용하며, 확인된 모델은 `gpt-6-luna`, `gpt-6.1-sol`, `gpt-6.1-terra`, `gpt-6-astra`이다. 사용량이나 요금을 확인하지 못한 호출은 무료로 표시하지 않고 일부 미확인 또는 확인 불가로 표시한다. 중지·오류 시에도 이미 확인한 비용은 남기며 재시도는 별도의 답변으로 기록한다.
 
-원화 환산은 설정에서 변경 가능한 고정 환율을 사용한다. 초기값은 1달러당 1,334.40원이며 [한국무역협회 환율 조회](https://www.kita.net/cmmrcInfo/ehgtGnrlzInfo/rltmEhgt.do)의 2026-11-12 국민은행 기준 환율을 참고한 값이다. 실시간 환율이 아니며 변경값은 다음 답변부터 적용한다. 금액을 펼치면 호출 수, 입력·캐시·출력 토큰, 달러 비용, 적용 환율과 단가 확인일을 볼 수 있다. 세금·카드 수수료는 포함하지 않으며 실제 청구액과 차이가 날 수 있다. `npm run test:chat`으로 모의 응답 기반 채팅·비용 테스트를 실행하며 실제 유료 API를 호출하지 않는다.
-
-`npm run test:chat-ui`는 숨김 Electron 창과 임시 사용자 프로필에서 실제 앱 통신 경로를 검증한다. `.env` 키 로드, 이전 키 정리, 화면 조회 요청, 비용 표시와 환율 저장을 확인하며 AI·MCP 응답은 모의 데이터로 대체한다.
+원화 환산은 설정에서 변경 가능한 고정 환율을 사용한다. 초기값은 1달러당 1,334.40원이며 [한국무역협회 환율 조회](https://www.kita.net/cmmrcInfo/ehgtGnrlzInfo/rltmEhgt.do)의 2026-11-12 국민은행 기준 환율을 참고한 값이다. 실시간 환율이 아니며 변경값은 다음 답변부터 적용한다. 금액을 펼치면 호출 수, 입력·캐시·출력 토큰, 달러 비용, 적용 환율과 단가 확인일을 볼 수 있다. 세금·카드 수수료는 포함하지 않으며 실제 청구액과 차이가 날 수 있다.
 
 예시 질문은 `프입 공지 찾아줘`, `이번 주 남은 과제 알려줘`, `오늘 수업 강의실 알려줘`, `수림학사 오늘 점심 뭐야?`이다. 실제 수강 과목을 조회해 약칭을 확인하고, 필요한 자료를 MCP에서 읽은 후 답한다. e-Class 자료를 조회하려면 시작 화면에서 ASTRA 로그인을 완료해야 한다. 공개 공지와 식단 조회 도구는 LMS 세션 없이 동작한다.
 
@@ -84,7 +67,7 @@ SYNESIS의 `scripts/home_assistant.py`와 `scripts/assistant_protocol.py`에서 
 
 집중 모드 홈의 **실시간 강의 보조 진행하기**로 강의 해설 창을 열어요. 창에서 **강의 해설 시작**을 누르면 마이크 전사를 시작해요. 일시 중지한 뒤 재개하면 같은 강의록에 이어서 기록돼요. **강의 해설 종료**를 누르거나 창을 닫으면 확정 발화와 강의 채팅이 현재 ASTRA 계정에 저장돼요. 집중 모드의 **강의록**에서 기록을 선택하면 별도 상세 창에 당시 강의록과 채팅이 함께 표시돼요. 미리보기는 예시 발화로 동작해요.
 
-실시간 전사에는 AST 루트 `.env`의 `SONIOX_API_KEY`가 필요해요. 해설은 AST의 `OPENAI_API_KEY`와 현재 계정의 비서 모델 설정을 사용해요. `npm run test:live-lecture`로 실제 AST 창 통신 경로와 마이크·해설 흐름을 모의 API로 확인할 수 있어요.
+실시간 전사에는 실시간 강의에는 Soniox 전사와 OpenAI 해설을 사용해요. 해설에는 현재 계정의 비서 모델 설정이 적용돼요.
 
 ## 과제 브라우저
 
@@ -92,7 +75,7 @@ SYNESIS의 `scripts/home_assistant.py`와 `scripts/assistant_protocol.py`에서 
 
 왼쪽 70%는 Electron `WebContentsView`로 실제 웹사이트를 표시하고, 오른쪽 30%는 과제 원문과 비서를 표시한다. 경계를 드래그하거나 경계에 키보드 초점을 둔 뒤 좌우 화살표로 너비를 조절한다. 현재 탭 버튼에 마우스를 올리면 뒤로·앞으로·새로고침 버튼과 주소가 나타난다. 주소를 누르면 입력창이 펼쳐지고, 편집한 뒤 Enter 또는 이동 버튼으로 열 수 있다. 웹페이지 스크롤과 파일 선택을 지원한다. `http`·`https` 주소만 허용한다.
 
-과제 정보는 MCP의 `get_assignment_workspace(assignment_id, course_id)`에서 가져온다. 과목·제목·마감과 교수자 안내 원문, 첨부 목록을 표시한다. 제출 방식·파일 형식·필수 조건은 본문에서 관련 문구를 찾아 그대로 표시하며 확인하지 못한 항목은 **확인 필요**로 표시한다. 첨부에만 있는 조건은 비서에게 PDF를 읽어 달라고 요청할 수 있다. 별도의 AI 호출 없이 과제 정보를 표시하며, 질문을 보내면 기존 `.env` 키와 모델 설정을 사용한다.
+과제 정보는 MCP의 `get_assignment_workspace(assignment_id, course_id)`에서 가져온다. 과목·제목·마감과 교수자 안내 원문, 첨부 목록을 표시한다. 제출 방식·파일 형식·필수 조건은 본문에서 관련 문구를 찾아 그대로 표시하며 확인하지 못한 항목은 **확인 필요**로 표시한다. 첨부에만 있는 조건은 비서에게 PDF를 읽어 달라고 요청할 수 있다. 별도의 AI 호출 없이 과제 정보를 표시하며, 질문을 보내면 비서 모델 설정을 사용해요.
 
 과제 창에서 `이 과목 PDF 전부 읽어줘`라고 하면 현재 강좌의 파일모음 PDF 원본을 메모리로 내려받아 OpenAI Responses API에 `detail: "low"`로 한 번에 보낸다. 한 요청에서 보낼 수 있는 파일 합계는 50 MB이며, 한도를 넘으면 전송 전에 안내한다. 답변 아래에는 전송한 파일과 다운로드 실패 항목을 표시하고, API 사용량으로 예상 비용을 계산한다. 후속 대화 기록에는 요약을 남긴다.
 
@@ -101,8 +84,6 @@ SYNESIS의 `scripts/home_assistant.py`와 `scripts/assistant_protocol.py`에서 
 확인된 앱 로그인 쿠키를 내장 브라우저의 별도 메모리 세션으로 가져오며 모든 과제 창이 이 세션을 공유한다. 강좌에 종속된 요청은 해당 창의 강좌를 선택한 뒤 실행한다. MCP 조회와 브라우저 요청은 같은 순서 제어를 사용해 다른 강좌로 바뀐 상태에서 조회하지 않도록 한다. 내장 창에서 재로그인하면 `confirm_browser_login`으로 공식 LMS 응답을 검증한 다음 기존 보안 저장 방식으로 저장하고 원래 과제로 돌아간다.
 
 외부 웹페이지에는 AST 통신 기능이나 Node 접근을 제공하지 않는다. e-Class는 기존 방침대로 검증한 조회·로그인 경로만 허용한다. 과제 제출·수정·삭제, 첨부 업로드, 게시물·댓글 쓰기 요청은 차단한다. 아직 검증하지 않은 e-Class 메뉴는 안내와 함께 열리지 않을 수 있다. 파일 선택 가능 여부와 업로드 허용 여부는 별개이다.
-
-`npm run test:assignment-ui`는 숨김 Electron 창과 모의 서버·모의 AI 응답으로 링크 열기, 과목·대화 분리, 주소와 탐색, 파일 선택, 경계 드래그와 크기 변경, 종료, 로그인 복귀를 검증한다. 유료 호출이나 실제 계정 변경은 없다.
 
 ## 집계 기준
 
@@ -136,10 +117,6 @@ SYNESIS의 `scripts/home_assistant.py`와 `scripts/assistant_protocol.py`에서 
 
 앱의 **통합 공지**에서 다섯 게시판의 글을 **전체**로 모아 보거나 게시판별로 볼 수 있다. 게시판별 최근 3페이지와 **더 보기**로 불러온 글을 대상으로, 제목과 본문에서 주제 태그를 최대 두 개 붙인다. 태그와 제목·부서·본문 검색을 함께 적용할 수 있다. 검색과 태그 필터는 같은 로컬 공개 공지 캐시를 사용하고, 처음 보는 본문은 백그라운드에서 추가한다. 이미지·첨부 내부 텍스트는 검색 범위에서 제외한다. 태그와 검색에는 AI API 키가 필요하지 않다.
 
-`npm run test:notice-ui`는 모의 공지로 분류, 캐시, 화면 필터와 본문 검색을 검증한다. 빌드 후 `AST_NOTICE_LIVE=1 npx --no-install electron tests/campus-notices-ipc.smoke.mjs --headless`로 공개 학교 공지를 이용한 검증도 실행할 수 있다.
-
-에이전트의 로컬 stdio MCP 시작 명령과 호출 순서는 프로젝트 스킬에 있다. [AST 스킬](.agents/skills/ast-seoultech/SKILL.md)
-
 - `list_campus_notices`는 목록과 `next_page`를, `get_campus_notice`는 본문과 첨부파일·본문 이미지 ID를 반환한다.
 - `read_campus_notice_file`은 12 MiB 이내의 PDF, TXT, CSV, TSV, MD, DOCX, HWPX에서 텍스트를 읽는다. 텍스트가 없는 스캔이나 이미지에는 원본 파일을 사용한다.
 - `download_campus_notice_file`은 원본 파일을 로컬에 저장하고 절대 경로를 반환한다. 바이너리 HWP와 이미지도 받을 수 있다. 파일당 최대 32 MiB이며, 한도를 넘으면 원문 공지에서 받을 수 있다.
@@ -148,19 +125,3 @@ SYNESIS의 `scripts/home_assistant.py`와 `scripts/assistant_protocol.py`에서 
 
 - `get_dorm_menu(dorm="kb", period="today")`는 오늘 식단을 반환한다. 학사 키는 KB학사 `kb`, 성림학사 `seonglim`, 수림학사 `surim`이다.
 - `period="week"`는 기준일이 포함된 월요일~일요일의 식단을 반환한다. `on_date`를 생략하면 한국 시간 기준 오늘을 사용한다. 끼니별 식단, 식단표에 표시된 비고, 원문 링크를 함께 반환한다.
-
-## 독립 MCP 개발
-
-Codex·Claude용 리인포스 MCP 소스와 설치 스크립트는 [`AST_lms_reinforce/`](AST_lms_reinforce/)에 있다. 앱과 독립 MCP가 같은 `seoultech_lms` 모듈 이름을 사용하므로 독립 MCP는 `AST_lms_reinforce/.venv`에 설치한다. 개발 및 테스트 명령은 [리인포스 MCP README](AST_lms_reinforce/README.md#개발-및-테스트)를 참고한다.
-
-## 개발 검증
-
-```sh
-npm run build
-npm run test:chat
-npm run test:data
-npm run test:login-ui
-.venv/bin/python -m unittest discover -s tests
-```
-
-앱 코드와 앱 전용 커넥터는 이 폴더에서 수정한다. [개발 규칙](AGENTS.md)
