@@ -22,6 +22,10 @@ export function FocusLectures({ revision }: { revision: number }) {
     return () => { current = false; unsubscribe(); window.removeEventListener("focus", load); };
   }, [revision, refresh]);
 
+  useEffect(() => () => {
+    void window.ast.closeLectureRecords(revision).catch(() => {});
+  }, [revision]);
+
   async function open(id: string) {
     setMessage("");
     setOpening(id);

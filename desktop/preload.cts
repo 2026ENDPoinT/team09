@@ -23,6 +23,7 @@ const bridge: LmsBridge = {
   ...chat,
   openLiveLecture: () => ipcRenderer.invoke("ast:open-live-lecture"),
   getLectureHistory: (revision) => ipcRenderer.invoke("ast:live-lecture-history", revision),
+  closeLectureRecords: (revision) => ipcRenderer.invoke("ast:close-lecture-records", revision),
   openLectureRecord: (revision, id) => ipcRenderer.invoke("ast:open-lecture-record", revision, id),
   onLectureHistoryChanged: (listener) => {
     const receive = () => listener();

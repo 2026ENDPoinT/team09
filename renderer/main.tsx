@@ -430,7 +430,7 @@ function App() {
       main.current?.scrollTo(0, 0);
     };
 
-    if (!animate || (next === screen && target?.courseId === courseTarget?.courseId) || entry !== "open" || sidebarMoving || reducedMotion.matches || !document.startViewTransition) {
+    if (!animate || (focusMode && focusScreen === "lectures") || (next === screen && target?.courseId === courseTarget?.courseId) || entry !== "open" || sidebarMoving || reducedMotion.matches || !document.startViewTransition) {
       update();
       return;
     }
@@ -495,7 +495,7 @@ function App() {
       setMode(next);
     };
 
-    if ((screen === "home" && mode === next) || reducedMotion.matches || sidebarMoving || !document.startViewTransition) {
+    if ((focusMode && focusScreen === "lectures") || (screen === "home" && mode === next) || reducedMotion.matches || sidebarMoving || !document.startViewTransition) {
       update();
       return;
     }
@@ -506,6 +506,10 @@ function App() {
   }
 
   function openFocusScreen(next: FocusScreen, guide?: PdfStudyGuide) {
+    if (next !== focusScreen) {
+      screenTransition.current?.skipTransition();
+      if (focusScreen === "lectures") void window.ast.closeLectureRecords(revision).catch(() => {});
+    }
     setFocusScreen(next);
     setFocusGuide(guide);
     if (next !== focusScreen) main.current?.scrollTo(0, 0);
@@ -682,7 +686,7 @@ function App() {
   return (
     <div className="ast-entry-shell" data-entry={entry}>
     <div className={`ast-workspace ast-dark-mono ast-let-him-cook${macWindowChrome ? " ast-window-chrome" : ""}${sidebarCollapsed ? " ast-nav-collapsed" : ""}`} ref={workspace}
-      style={widths.style} inert={entry !== "open"} data-mode={focusMode ? "focus" : "normal"} data-sidebar-moving={sidebarMoving || undefined}>
+      style={widths.style} inert={entry !== "open"} data-mode={focusMode ? "focus" : "normal"} data-focus-screen={focusMode ? focusScreen : undefined} data-sidebar-moving={sidebarMoving || undefined}>
       <header className="ast-chrome">
         <div className="ast-identity">
           <button type="button" className="ast-sidebar-toggle" onClick={toggleSidebar} disabled={focusMode}

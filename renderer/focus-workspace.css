@@ -323,3 +323,5 @@
 .focus-lecture-info > span { color: #d5c4cb; font-size: 13px; }
 .focus-lecture-list button > span:last-child { color: #f2bdb3; flex: none; }
 .focus-lecture-error { margin: 0 0 14px; color: #ffc6b8; }
+
+.ast-workspace:not([data-focus-screen="lectures"]) .focus-lectures { display: none; }

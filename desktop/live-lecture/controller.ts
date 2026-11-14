@@ -21,12 +21,14 @@ export function registerLiveLecture({ projectRoot, rendererPath, apiKey, activeD
   const channel = "ast:open-live-lecture";
   const historyChannel = "ast:live-lecture-history";
   const detailChannel = "ast:open-lecture-record";
+  const closeDetailsChannel = "ast:close-lecture-records";
   const readChannel = "ast:lecture-record";
   const details = new Map<string, { window: BrowserWindow; record: LectureRecord }>();
   const pendingWrites = new Map<string, Promise<void>>();
   let windows: Awaited<ReturnType<typeof openLiveLecture>> | undefined;
   let opening: Promise<Result> | undefined;
   let revision = 0;
+  let detailRevision = 0;
   let accountRevision = sessionRevision();
   let disposed = false;
 
@@ -117,11 +119,12 @@ export function registerLiveLecture({ projectRoot, rendererPath, apiKey, activeD
     const owner = BrowserWindow.fromWebContents(event.sender);
     if (!owner) return { ok: false, message: "AST 창을 찾지 못했어요." };
     const currentRevision = revision;
+    const currentDetailRevision = detailRevision;
     let window: BrowserWindow | undefined;
     try {
       await pendingWrites.get(join(directory, id));
       const record = await new LectureArchive(directory).read(id);
-      if (owner.isDestroyed() || revision !== currentRevision || directory !== historyDirectory(expected)) {
+      if (owner.isDestroyed() || revision !== currentRevision || detailRevision !== currentDetailRevision || directory !== historyDirectory(expected)) {
         return { ok: false, message: "강의록 열기를 취소했어요." };
       }
       const existing = details.get(id);
@@ -145,7 +148,8 @@ export function registerLiveLecture({ projectRoot, rendererPath, apiKey, activeD
       owner.once("closed", close);
       detail.once("closed", () => { details.delete(id); owner.off("closed", close); });
       await detail.loadFile(rendererPath, { hash: `record/${id}` });
-      if (!hidden && !detail.isDestroyed()) detail.show();
+      if (detail.isDestroyed() || detailRevision !== currentDetailRevision) return { ok: false, message: "강의록 열기를 취소했어요." };
+      if (!hidden) detail.show();
       return { ok: true };
     } catch {
       if (window && !window.isDestroyed()) window.destroy();
@@ -162,11 +166,21 @@ export function registerLiveLecture({ projectRoot, rendererPath, apiKey, activeD
     return detail.record;
   });
 
+  function closeDetails() {
+    detailRevision++;
+    for (const { window } of details.values()) if (!window.isDestroyed()) window.destroy();
+  }
+
+  ipcMain.handle(closeDetailsChannel, (event, expected: number) => {
+    verifyMain(event);
+    if (historyDirectory(expected)) closeDetails();
+  });
+
   function close() {
     revision++;
     windows?.close();
     windows = undefined;
-    for (const { window } of details.values()) window.destroy();
+    closeDetails();
   }
 
   return {
@@ -178,7 +192,7 @@ export function registerLiveLecture({ projectRoot, rendererPath, apiKey, activeD
     },
     async dispose() {
       disposed = true;
-      for (const name of [channel, historyChannel, detailChannel, readChannel]) ipcMain.removeHandler(name);
+      for (const name of [channel, historyChannel, detailChannel, closeDetailsChannel, readChannel]) ipcMain.removeHandler(name);
       close();
       await Promise.allSettled(pendingWrites.values());
     },

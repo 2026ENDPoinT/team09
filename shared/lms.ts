@@ -172,6 +172,7 @@ export type LmsBridge = CampusNoticeBridge & ChatBridge & FocusLibraryBridge & {
   saveStudyFonts: (sessionRevision: number, input: StudyFontSettings) => Promise<StudyFontSettings>;
   openLiveLecture(): Promise<LiveLectureResult>;
   getLectureHistory(revision: number): Promise<LectureHistoryResult>;
+  closeLectureRecords(revision: number): Promise<void>;
   openLectureRecord(revision: number, id: string): Promise<LiveLectureResult>;
   onLectureHistoryChanged(listener: () => void): () => void;
   openAssignment: (target: AssignmentTarget) => Promise<boolean>;
